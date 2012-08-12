@@ -52,6 +52,7 @@ In particular make sure to install Xcode.
 * [HipChat](https://www.hipchat.com)
 * [AppTrap](http://onnati.net/apptrap/)
 * [Postgress.app](http://postgresapp.com)
+* [SequelPro](http://www.sequelpro.com)
 
   To install right click on it and select 'Open'. It wont start directly due to
   Gatekeeper.
