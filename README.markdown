@@ -226,7 +226,8 @@ and re-login. now you are able to run rvm commands.
     brew install apple-gcc42
 
     rvm install 1.9.2
-    rvm install 1.8.7
+
+    CFLAGS="-I/opt/X11/include" rvm install 1.8.7
 
 
 ### POW
