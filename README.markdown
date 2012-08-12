@@ -108,6 +108,9 @@ Go to system preferences and adjust the following:
 
   Choose computer name
 
+* Accessability
+
+Enable dragging with Drag Lock on "Mouse & Trackpad/Trackpad Options"
 
 [top](#top)<a name=homebrew></a>
 ### Homebrew
