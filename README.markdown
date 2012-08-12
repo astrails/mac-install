@@ -17,10 +17,11 @@ the intent to use and update it whenever I install a new mac.
   * [Preferences](#preferences)
   * [Homebrew](#homebrew)
   * [/etc git](#etc)
+  * [ZSH](#zsh)
+  * [Dot files](#dotfiles)
   * [ssh](#ssh)
   * [Dotvim](#dotvim)
   * [RVM](#rvm)
-  * [ZSH](#zsh)
 
 * [Copyright](#copy)
 
@@ -113,7 +114,7 @@ Go to system preferences and adjust the following:
 * Install Xcode command line tools from Xcode Preferences' Downloads tab.
 * Install [Xquartz](http://xquartz.macosforge.org/) of at least version 2.7.2
 * Install [Homebrew](http://mxcl.github.com/homebrew/).
-* brew install macvim git wget imagemagick
+* brew install macvim git wget imagemagick aria2
 
 [top](#top)<a name=etc></a>
 ### /etc git
@@ -125,6 +126,20 @@ Go to system preferences and adjust the following:
     git add .
     git commit -m initial
 
+[top](#top)<a name=zsh></a>
+### ZSH
+
+    brew install zsh zsh-completions
+
+    git clone git@github.com:astrails/dotzsh .zsh
+    ln -sfn .zsh/zshrc .zshrc
+
+    echo /usr/local/bin/zsh | sudo tee -a /etc/shells
+    chsh -s /usr/local/bin/zsh
+
+    # edit /etc/paths and move /usr/local/bin to the 1st line
+    vim /etc/paths
+
 [top](#dotfiles)<a name=dotfiles></a>
 ### Dot files
 
@@ -132,6 +147,8 @@ Go to system preferences and adjust the following:
     git clone git@github.com:astrails/dotfiles .dot
     cd .dot
     sudo ln -sfn `pwd`/gitconfig /etc/gitconfig
+
+    ln -sfn `pwd`/zsh-local ~/.zsh/local
 
 #### Gitconfig
 
@@ -163,6 +180,12 @@ Global user's config:
 ### SSH
 
 Copy your `~/.ssh` directory over from the old system or backup.
+
+### SSH (new system / user)
+
+Generate ssh keys:
+
+    ssh-keygen -t dsa
 
 [top](#top)<a name=dotvim></a>
 ### Dotvim
@@ -202,20 +225,9 @@ and re-login. now you are able to run rvm commands.
     brew tap homebrew/dupes
     brew install apple-gcc42
 
+    rvm install 1.9.2
+    rvm install 1.8.7
 
-[top](#top)<a name=zsh></a>
-### ZSH
-
-    brew install zsh zsh-completions
-
-    git clone git@github.com:astrails/dotzsh .zsh
-    ln -sfn .zsh/zshrc .zshrc
-
-    echo /usr/local/bin/zsh | sudo tee -a /etc/shells
-    chsh -s /usr/local/bin/zsh
-
-    # edit /etc/paths and move /usr/local/bin to the 1st line
-    vim /etc/paths
 
 ### POW
 
