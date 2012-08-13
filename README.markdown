@@ -14,6 +14,7 @@ the intent to use and update it whenever I install a new mac.
 * [Basic Setup](#basic)
   * [AppStore](#appstore)
   * [3rd party](#3rdparty)
+  * [Skype history transfer](#skype)
   * [MySQL](#mysql)
   * [Preferences](#preferences)
   * [Homebrew](#homebrew)
@@ -63,6 +64,16 @@ In particular make sure to install Xcode.
   Start it and check "Start automatically on login"
 
 * [AppFresh](http://metaquark.de/appfresh/mac)
+
+[top](#top)<a name=skype></a>
+### Skype history transfer
+
+* make sure you have the same version of Skype on both old and new computers
+* quit Skype on both computers
+* create archive of your skype id directory on the old computer, transfer it
+  and open it at the same place at the new computer. The path is:
+  
+        ~/Library/Application Support/Skype/YOUR_SKYPE_ID
 
 [top](#top)<a name=mysql></a>
 ### MySQL
