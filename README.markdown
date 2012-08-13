@@ -14,6 +14,7 @@ the intent to use and update it whenever I install a new mac.
 * [Basic Setup](#basic)
   * [AppStore](#appstore)
   * [3rd party](#3rdparty)
+  * [MySQL](#mysql)
   * [Preferences](#preferences)
   * [Homebrew](#homebrew)
   * [/etc git](#etc)
@@ -63,6 +64,19 @@ In particular make sure to install Xcode.
 
 * [AppFresh](http://metaquark.de/appfresh/mac)
 
+[top](#top)<a name=mysql></a>
+### MySQL
+
+* Download 64bit Community Server DMG archive from [MySQL](http://mysql.com).
+* Mount it
+* install 3 components:
+  * mysql
+  * MySQL.prefpane
+  * MySQLStartupItem
+* setup paths:
+
+        echo /usr/local/mysql/bin | sudo tee /etc/paths.d/mysql
+        echo /usr/local/mysql/man | sudo tee /etc/manpaths.d/mysql
 
 [top](#top)<a name=preferences></a>
 ### Preferences
