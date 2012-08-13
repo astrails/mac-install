@@ -23,7 +23,7 @@ the intent to use and update it whenever I install a new mac.
   * [ssh](#ssh)
   * [Dotvim](#dotvim)
   * [RVM](#rvm)
-  * [NVM](#nvm)
+  * [Nodejs](#nodejs)
   * [POW](#pow)
 
 * [Copyright](#copy)
@@ -243,8 +243,10 @@ and re-login. now you are able to run rvm commands.
 
     CFLAGS="-I/opt/X11/include" rvm install 1.8.7
 
-[top](#top)<a name=nvm></a>
-### NVM
+[top](#top)<a name=nodejs></a>
+### Nodejs
+
+We will use NVM to install node:
 
     cd ~
     git clone git://github.com/creationix/nvm.git .nvm
@@ -254,6 +256,9 @@ Open new terminal so that nvm config will load (handled by dotfiles/zsh-local).
 Then:
 
     nvm install v0.8.6
+    nvm alias default v0.8.6
+
+Open new terminal again and verify that `node` works.
 
 [top](#top)<a name=pow></a>
 ### POW
