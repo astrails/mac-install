@@ -147,12 +147,15 @@ Enable dragging with Drag Lock on "Mouse & Trackpad/Trackpad Options"
 [top](#dotfiles)<a name=dotfiles></a>
 ### Dot files
 
-    cd ~
-    git clone git@github.com:astrails/dotfiles .dot
-    cd .dot
-    sudo ln -sfn `pwd`/gitconfig /etc/gitconfig
+Fork git@github.com:astrails/dotfiles and make changes to suite your needs.
+You must edit user-gitconfig.
 
-    ln -sfn `pwd`/zsh-local ~/.zsh/local
+Then:
+
+    cd ~
+    git clone YOUR_FORK_LOCATION .dot
+    cd .dot
+    make install
 
 #### Gitconfig
 
@@ -170,15 +173,6 @@ Link to /etc (use the path from previous command). e.g.:
 Verify it works:
 
     git lga
-
-Global user's config:
-
-    git config --global --add user.name "NAME"
-    git config --global --add user.email "EMAIL"
-    git config --global --add github.user "USER"
-    git config --global --add heroku.account "ACCOUNT"
-
-    git config --global -l
 
 [top](#top)<a name=ssh></a>
 ### SSH
