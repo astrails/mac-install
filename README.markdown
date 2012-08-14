@@ -182,7 +182,10 @@ Change the following apps to be on all descktops:
 * Install Xcode command line tools from Xcode Preferences' Downloads tab.
 * Install [Xquartz](http://xquartz.macosforge.org/) of at least version 2.7.2
 * Install [Homebrew](http://mxcl.github.com/homebrew/).
-* brew install macvim git wget imagemagick aria2 dos2unix watch
+* brew install macvim git wget imagemagick aria2 dos2unix watch tree pstree
+* brew install tmux mtr iftop htop-osx gpg2 ctags
+* brew install erlang
+* brew install clojure clojure-contrib leiningen
 
 [top](#top)<a name=etc></a>
 ## /etc git
@@ -206,6 +209,7 @@ Change the following apps to be on all descktops:
     chsh -s /usr/local/bin/zsh
 
     # edit /etc/paths and move /usr/local/bin to the 1st line
+    # also add /usr/local/sbin just as the 2nd line
     vim /etc/paths
 
 [top](#dotfiles)<a name=dotfiles></a>
