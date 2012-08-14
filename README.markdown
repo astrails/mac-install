@@ -14,9 +14,12 @@ the intent to use and update it whenever I install a new mac.
 * [Basic Setup](#basic)
   * [AppStore](#appstore)
   * [3rd party](#3rdparty)
+  * [iTunes Music](#itunes)
+  * [iPhoto Pictures](#iphoto)
   * [Skype history transfer](#skype)
   * [MySQL](#mysql)
   * [Preferences](#preferences)
+  * [All Descktops Apps](#alldesktopapps)
   * [Homebrew](#homebrew)
   * [/etc git](#etc)
   * [ZSH](#zsh)
@@ -69,6 +72,24 @@ In particular make sure to install Xcode.
   Start it and check "Start automatically on login"
 
 * [AppFresh](http://metaquark.de/appfresh/mac)
+
+[top](#top)<a name=iphoto></a>
+### iPhoto Pictures
+
+* simply copy the `~/Pictures/iPhoto Library` to the new computer
+
+[top](#top)<a name=itunes></a>
+### iTunes Music
+
+* quit iTunes on the old computer.
+* open home directory in Finder
+* right click on the Music folder and 'compress' it
+* transfer it to the new computer.
+* unpack into some temp folder
+* remove the **inside content** of your ~/Music folder
+* move the content of the Music folder from the old computer into ~/Music
+* in case your music library was on an external drive - make sure the drive is mounted
+* start iTunes
 
 [top](#top)<a name=skype></a>
 ### Skype history transfer
@@ -144,13 +165,28 @@ Go to system preferences and adjust the following:
 
 Enable dragging with Drag Lock on "Mouse & Trackpad/Trackpad Options"
 
+[top](#top)<a name=alldesktopapps></a>
+### All Descktops Apps
+
+Change the following apps to be on all descktops:
+
+* Preferences
+* iTunes
+* Contacts
+* Calendar
+* Reminders
+* Skype
+* HipChat
+* 1Password
+* Activity Monitor
+
 [top](#top)<a name=homebrew></a>
 ### Homebrew
 
 * Install Xcode command line tools from Xcode Preferences' Downloads tab.
 * Install [Xquartz](http://xquartz.macosforge.org/) of at least version 2.7.2
 * Install [Homebrew](http://mxcl.github.com/homebrew/).
-* brew install macvim git wget imagemagick aria2
+* brew install macvim git wget imagemagick aria2 dos2unix watch
 
 [top](#top)<a name=etc></a>
 ### /etc git
