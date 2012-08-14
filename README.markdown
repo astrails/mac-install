@@ -193,6 +193,7 @@ Change the following apps to be on all descktops:
 
 * Install Xcode command line tools from Xcode Preferences' Downloads tab.
 * Install [Xquartz](http://xquartz.macosforge.org/) of at least version 2.7.2
+  > NOTE: VERY important to install Xquartz before Homebrew.
 * Install [Homebrew](http://mxcl.github.com/homebrew/).
 * brew install macvim git wget imagemagick aria2 dos2unix watch tree pstree
 * brew install tmux mtr iftop htop-osx gpg2 ctags
