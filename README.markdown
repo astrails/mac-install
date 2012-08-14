@@ -28,6 +28,7 @@ the intent to use and update it whenever I install a new mac.
 * [ssh](#ssh)
 * [Dotvim](#dotvim)
 * [RVM](#rvm)
+* [Heroku](#heroku)
 * [Nodejs](#nodejs)
 * [POW](#pow)
 
@@ -313,6 +314,21 @@ and re-login. now you are able to run rvm commands.
     rvm install 1.9.2
 
     CFLAGS="-I/opt/X11/include" rvm install 1.8.7
+
+
+[top](#top)<a name=heroku></a>
+## Heroku
+
+Copy `~/.heroku/accounts` from the old machine.
+
+Then:
+
+    gem install heroku
+    heroku plugins:install git://github.com/ddollar/heroku-accounts.git
+
+Verify by running
+
+    heroku accounts
 
 [top](#top)<a name=nodejs></a>
 ## Nodejs
