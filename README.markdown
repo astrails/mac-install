@@ -198,6 +198,7 @@ Change the following apps to be on all descktops:
 * brew install tmux mtr iftop htop-osx gpg2 ctags
 * brew install erlang
 * brew install clojure clojure-contrib leiningen
+* brew install md5deep
 
 [top](#top)<a name=etc></a>
 ## /etc git
