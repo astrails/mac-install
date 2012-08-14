@@ -258,19 +258,7 @@ Generate ssh keys:
 
     cd ~
     git clone git@github.com/astrails/dotvim .vim
-    ln -sfn .vim/vimrc vimrc
-
-    cat > .local.vim
-    set cul
-    set foldcolumn=4
-
-    if has('gui_running')
-      set background=dark
-      colorscheme=vividchalk
-    else
-      set background=light
-    end
-    ^D
+    ln -sfn .vim/vimrc .vimrc
 
     cd .vim
     make install
