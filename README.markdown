@@ -42,6 +42,12 @@ In particular make sure to install Xcode.
 <a name=3rdparty></a>
 ## 3rd party
 
+
+> NOTE: some apps that are not "properly" signed will not start unless you
+> change Gatekeeper preferences. There is a *better* workaround though. Right
+> click and select 'Open', this time you will have an additional optin to open
+> it regardless of the Gatekeeper settings.
+
 * [Dropbox](https://www.dropbox.com)
 * [1Password](https://agilebits.com/onepassword)
 
@@ -61,12 +67,6 @@ In particular make sure to install Xcode.
 * [AppTrap](http://onnati.net/apptrap/)
 * [Postgress.app](http://postgresapp.com)
 * [SequelPro](http://www.sequelpro.com)
-
-  To install right click on it and select 'Open'. It wont start directly due to
-  Gatekeeper.
-
-  Start it and check "Start automatically on login"
-
 * [AppFresh](http://metaquark.de/appfresh/mac)
 
 [top](#top)<a name=iphoto></a>
