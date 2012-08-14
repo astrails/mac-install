@@ -225,6 +225,13 @@ Then:
     cd .dot
     make install
 
+This will install the following:
+
+* ~/.local-after.vim
+* ~/.zsh/local
+* /etc/gitconfig
+* ~/.gitconfig
+
 ### Gitconfig
 
 Homebrew's git system file is not quite properly set. it points to version
