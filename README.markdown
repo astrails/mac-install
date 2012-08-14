@@ -22,7 +22,9 @@ the intent to use and update it whenever I install a new mac.
 * [Homebrew](#homebrew)
 * [/etc git](#etc)
 * [ZSH](#zsh)
+* [Fonts](#fonts)
 * [Dot files](#dotfiles)
+* [gitconfig](#gitconfig)
 * [ssh](#ssh)
 * [Dotvim](#dotvim)
 * [RVM](#rvm)
@@ -212,7 +214,19 @@ Change the following apps to be on all descktops:
     # also add /usr/local/sbin just as the 2nd line
     vim /etc/paths
 
-[top](#dotfiles)<a name=dotfiles></a>
+[top](#top)<a name=inconsolata></a>
+## [Fonts](#fonts)
+
+wget http://www.levien.com/type/myfonts/Inconsolata.otf -O /Library/Fonts/Inconsolata.otf
+wget https://gist.github.com/raw/1595572/Inconsolata-dz-Powerline.otf -O /Library/Fonts/Inconsolata-dz-Powerline.otf
+wget https://gist.github.com/raw/1595572/Menlo-Powerline.otf -O /Library/Fonts/Menlo-Powerline.otf
+wget https://gist.github.com/raw/1595572/mensch-Powerline.otf -O /Library/Fonts/mensch-Powerline.otf
+
+
+[top](#top)<a name=dotfiles></a>
+## Dot files
+
+[top](#top)<a name=dotfiles></a>
 ## Dot files
 
 Fork git@github.com:astrails/dotfiles and make changes to suite your needs.
@@ -232,6 +246,7 @@ This will install the following:
 * /etc/gitconfig
 * ~/.gitconfig
 
+[top](#top)<a name=gitconfig></a>
 ### Gitconfig
 
 Homebrew's git system file is not quite properly set. it points to version
