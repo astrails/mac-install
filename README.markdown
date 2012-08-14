@@ -68,6 +68,11 @@ In particular make sure to install Xcode.
 * [HipChat](https://www.hipchat.com)
 * [AppTrap](http://onnati.net/apptrap/)
 * [Postgress.app](http://postgresapp.com)
+
+  To create postgres user without a password like in 'regular' postgres installation:
+
+        createuser --no-password -h localhost postgres
+
 * [SequelPro](http://www.sequelpro.com)
 * [AppFresh](http://metaquark.de/appfresh/mac)
 
