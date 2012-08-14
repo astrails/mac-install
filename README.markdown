@@ -46,9 +46,14 @@ In particular make sure to install Xcode.
 * [Dropbox](https://www.dropbox.com)
 * [1Password](https://agilebits.com/onepassword)
 
-  Make sure Dropbox finished sync before you open your 1password keychain!
+  > IMPORTANT: Make sure Dropbox finished sync before you open your 1password keychain!
 
 * [Google Chrome](http://www.google.com/chrome/)
+
+  sign into your gmail account to sync prefs
+  (you will need to create a new application specific password if you use 2-phase auth.)
+
+* [Google Drive](https://drive.google.com/start)
 * [Skype](http://skype.com)
 * [LaunchBar 5](http://www.obdev.at/products/launchbar/index.html)
 * [iTerm2](http://www.iterm2.com)
