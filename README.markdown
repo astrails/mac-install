@@ -149,8 +149,12 @@ Go to system preferences and adjust the following:
 
   in "Modifier Keys" popup switch "Caps Lock" to "Control"
 
-  in Keyboard Shortcuts turn off "Show Spotlight Window" in spotlight group and
-  turn on "Select next source in Input menu" in the "Keyboard & Text" group.
+  * Keyboard Shortcuts:
+
+    * turn off "Show Spotlight Window" in spotlight group and
+    * turn on "Select next source in Input menu" in the "Keyboard & Text" group.
+    * turn on "Switch to Desktop .." in "Mission Control"
+
 
 * Trackpad
 
