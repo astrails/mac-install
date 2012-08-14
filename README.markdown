@@ -11,40 +11,36 @@ the intent to use and update it whenever I install a new mac.
 <a name=top></a>
 ## Contents
 
-* [Basic Setup](#basic)
-  * [AppStore](#appstore)
-  * [3rd party](#3rdparty)
-  * [iTunes Music](#itunes)
-  * [iPhoto Pictures](#iphoto)
-  * [Skype history transfer](#skype)
-  * [MySQL](#mysql)
-  * [Preferences](#preferences)
-  * [All Descktops Apps](#alldesktopapps)
-  * [Homebrew](#homebrew)
-  * [/etc git](#etc)
-  * [ZSH](#zsh)
-  * [Dot files](#dotfiles)
-  * [ssh](#ssh)
-  * [Dotvim](#dotvim)
-  * [RVM](#rvm)
-  * [Nodejs](#nodejs)
-  * [POW](#pow)
+* [AppStore](#appstore)
+* [3rd party](#3rdparty)
+* [iTunes Music](#itunes)
+* [iPhoto Pictures](#iphoto)
+* [Skype history transfer](#skype)
+* [MySQL](#mysql)
+* [Preferences](#preferences)
+* [All Descktops Apps](#alldesktopapps)
+* [Homebrew](#homebrew)
+* [/etc git](#etc)
+* [ZSH](#zsh)
+* [Dot files](#dotfiles)
+* [ssh](#ssh)
+* [Dotvim](#dotvim)
+* [RVM](#rvm)
+* [Nodejs](#nodejs)
+* [POW](#pow)
 
 * [Copyright](#copy)
 
 
-[top](#top)<a name=basic></a>
-## Basic Setup
-
 <a name=appstore></a>
-### AppStore
+## AppStore
 
 Login into the AppStore, go to "Purchases" and download all relevant apps.
 
 In particular make sure to install Xcode.
 
 <a name=3rdparty></a>
-### 3rd party
+## 3rd party
 
 * [Dropbox](https://www.dropbox.com)
 * [1Password](https://agilebits.com/onepassword)
@@ -74,12 +70,12 @@ In particular make sure to install Xcode.
 * [AppFresh](http://metaquark.de/appfresh/mac)
 
 [top](#top)<a name=iphoto></a>
-### iPhoto Pictures
+## iPhoto Pictures
 
 * simply copy the `~/Pictures/iPhoto Library` to the new computer
 
 [top](#top)<a name=itunes></a>
-### iTunes Music
+## iTunes Music
 
 * quit iTunes on the old computer.
 * open home directory in Finder
@@ -92,7 +88,7 @@ In particular make sure to install Xcode.
 * start iTunes
 
 [top](#top)<a name=skype></a>
-### Skype history transfer
+## Skype history transfer
 
 * make sure you have the same version of Skype on both old and new computers
 * quit Skype on both computers
@@ -102,7 +98,7 @@ In particular make sure to install Xcode.
         ~/Library/Application Support/Skype/YOUR_SKYPE_ID
 
 [top](#top)<a name=mysql></a>
-### MySQL
+## MySQL
 
 * Download 64bit Community Server DMG archive from [MySQL](http://mysql.com).
 * Mount it
@@ -116,7 +112,7 @@ In particular make sure to install Xcode.
         echo /usr/local/mysql/man | sudo tee /etc/manpaths.d/mysql
 
 [top](#top)<a name=preferences></a>
-### Preferences
+## Preferences
 
 Go to system preferences and adjust the following:
 
@@ -166,7 +162,7 @@ Go to system preferences and adjust the following:
 Enable dragging with Drag Lock on "Mouse & Trackpad/Trackpad Options"
 
 [top](#top)<a name=alldesktopapps></a>
-### All Descktops Apps
+## All Descktops Apps
 
 Change the following apps to be on all descktops:
 
@@ -181,7 +177,7 @@ Change the following apps to be on all descktops:
 * Activity Monitor
 
 [top](#top)<a name=homebrew></a>
-### Homebrew
+## Homebrew
 
 * Install Xcode command line tools from Xcode Preferences' Downloads tab.
 * Install [Xquartz](http://xquartz.macosforge.org/) of at least version 2.7.2
@@ -189,7 +185,7 @@ Change the following apps to be on all descktops:
 * brew install macvim git wget imagemagick aria2 dos2unix watch
 
 [top](#top)<a name=etc></a>
-### /etc git
+## /etc git
 
     sudo su -
     cd /etc/
@@ -199,7 +195,7 @@ Change the following apps to be on all descktops:
     git commit -m initial
 
 [top](#top)<a name=zsh></a>
-### ZSH
+## ZSH
 
     brew install zsh zsh-completions
 
@@ -213,7 +209,7 @@ Change the following apps to be on all descktops:
     vim /etc/paths
 
 [top](#dotfiles)<a name=dotfiles></a>
-### Dot files
+## Dot files
 
 Fork git@github.com:astrails/dotfiles and make changes to suite your needs.
 You must edit user-gitconfig.
@@ -225,7 +221,7 @@ Then:
     cd .dot
     make install
 
-#### Gitconfig
+### Gitconfig
 
 Homebrew's git system file is not quite properly set. it points to version
 install dir and not to /usr/local/etc. we will need to link it every git install/upgrade:
@@ -243,18 +239,18 @@ Verify it works:
     git lga
 
 [top](#top)<a name=ssh></a>
-### SSH
+## SSH
 
 Copy your `~/.ssh` directory over from the old system or backup.
 
-### SSH (new system / user)
+## SSH (new system / user)
 
 Generate ssh keys:
 
     ssh-keygen -t dsa
 
 [top](#top)<a name=dotvim></a>
-### Dotvim
+## Dotvim
 
     cd ~
     git clone git@github.com/astrails/dotvim .vim
@@ -277,7 +273,7 @@ Generate ssh keys:
 
 
 [top](#top)<a name=rvm></a>
-### RVM
+## RVM
 
     curl -L https://get.rvm.io | sudo bash -s stable
 
@@ -296,7 +292,7 @@ and re-login. now you are able to run rvm commands.
     CFLAGS="-I/opt/X11/include" rvm install 1.8.7
 
 [top](#top)<a name=nodejs></a>
-### Nodejs
+## Nodejs
 
 We will use NVM to install node:
 
@@ -313,7 +309,7 @@ Then:
 Open new terminal again and verify that `node` works.
 
 [top](#top)<a name=pow></a>
-### POW
+## POW
 
     curl get.pow.cx | sh
 
