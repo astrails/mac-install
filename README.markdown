@@ -74,8 +74,10 @@ In particular make sure to install Xcode.
   To create postgres user without a password like in 'regular' postgres installation:
 
         createuser --no-password -h localhost postgres
-
 * [SequelPro](http://www.sequelpro.com)
+* [Transmission](http://www.transmissionbt.com)
+* [VLC](http://www.videolan.org/)
+
 * [AppFresh](http://metaquark.de/appfresh/mac)
 
 [top](#top)<a name=iphoto></a>
