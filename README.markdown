@@ -31,6 +31,7 @@ the intent to use and update it whenever I install a new mac.
 * [Heroku](#heroku)
 * [Nodejs](#nodejs)
 * [POW](#pow)
+* [Backblaze](#backblaze)
 
 * [Copyright](#copy)
 
@@ -353,6 +354,16 @@ Open new terminal again and verify that `node` works.
 ## POW
 
     curl get.pow.cx | sh
+
+[top](#top)<a name=backblaze></a>
+### Backblaze
+
+Download and install Backblaze from [backblaze.com](http://backblaze.com/).
+
+Start backblaze.
+
+Select Transfer Backup State from the Backblaze Menu Icon and follow the steps.
+
 
 [top](#top)<a name=copy></a>
 ## Copyright
