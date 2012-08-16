@@ -13,6 +13,8 @@ the intent to use and update it whenever I install a new mac.
 
 * [AppStore](#appstore)
 * [3rd party](#3rdparty)
+* [Keychains](#keychains)
+* [Preview signatures](#preview)
 * [iTunes Music](#itunes)
 * [iPhoto Pictures](#iphoto)
 * [Skype history transfer](#skype)
@@ -77,13 +79,33 @@ In particular make sure to install Xcode.
 * [SequelPro](http://www.sequelpro.com)
 * [Transmission](http://www.transmissionbt.com)
 * [VLC](http://www.videolan.org/)
+* [Things](http://culturedcode.com/things/)
+* [Stanza](http://www.lexcycle.com)
+
+  > Note: site seems to be down. copy from old computer's Applications folder
+  > instead
+
+* [Calibre](http://calibre-ebook.com)
+
+  Choose ~/Dropbox/books as the library location
 
 * [AppFresh](http://metaquark.de/appfresh/mac)
 
-[top](#top)<a name=iphoto></a>
-## iPhoto Pictures
 
-* simply copy the `~/Pictures/iPhoto Library` to the new computer
+[top](#top)<a name=keychains></a>
+## Keychains
+
+Copy files from `~/Library/Keychains/`. rename them with some common prefix
+like name of the old computer.
+
+[top](#top)<a name=preview></a>
+## Preview signatures
+
+ Copy
+ `~/Library/Containers/com.apple.Preview/Data/Library/Preferences/com.apple.Preview.signatures.plist`
+ from the old computer.
+
+ The keychains from the previous step should let you open it.
 
 [top](#top)<a name=itunes></a>
 ## iTunes Music
@@ -97,6 +119,11 @@ In particular make sure to install Xcode.
 * move the content of the Music folder from the old computer into ~/Music
 * in case your music library was on an external drive - make sure the drive is mounted
 * start iTunes
+
+[top](#top)<a name=iphoto></a>
+## iPhoto Pictures
+
+* simply copy the `~/Pictures/iPhoto Library` to the new computer
 
 [top](#top)<a name=skype></a>
 ## Skype history transfer
@@ -121,6 +148,16 @@ In particular make sure to install Xcode.
 
         echo /usr/local/mysql/bin | sudo tee /etc/paths.d/mysql
         echo /usr/local/mysql/man | sudo tee /etc/manpaths.d/mysql
+
+
+[top](#top)<a name=files></a>
+## Files
+
+Copy the following files over:
+
+* `~/Documents/`
+* `~/Downloads`
+* `~/Desktop/`
 
 [top](#top)<a name=preferences></a>
 ## Preferences
@@ -158,6 +195,9 @@ Go to system preferences and adjust the following:
     * turn off "Show Spotlight Window" in spotlight group and
     * turn on "Select next source in Input menu" in the "Keyboard & Text" group.
     * turn on "Switch to Desktop .." in "Mission Control"
+
+    * turn on "All controls" for full keyboard access at the bottom of the
+      dialog.
 
 
 * Trackpad
