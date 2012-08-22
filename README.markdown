@@ -23,6 +23,7 @@ the intent to use and update it whenever I install a new mac.
 * [All Descktops Apps](#alldesktopapps)
 * [Homebrew](#homebrew)
 * [/etc git](#etc)
+* [Postfix](#postfix)
 * [ZSH](#zsh)
 * [Fonts](#fonts)
 * [Dot files](#dotfiles)
@@ -253,6 +254,63 @@ Change the following apps to be on all descktops:
     chmod 700 .git
     git add .
     git commit -m initial
+
+[top](#top)<a name=postfix></a>
+## Postfix
+
+If you upgraded from Lion your Postfix config is most probably broken.
+The upgrade changes /etc/postfix/main.cf to point to a new set of postfix
+directories but leaves the old directories at their old place.
+
+> Note: I expect ML upgrade process to be soon fixed to handle this so at some
+> point in time those steps should become unnecessary
+
+to verify the new directory locations:
+
+    ls /Library/Server/Mail/Data/spool
+    ls /Library/Server/Mail/Data/mta
+
+check the old directory locations:
+
+    ls /var/spool/postfix
+    ls /var/lib/postfix
+
+Lets move the directories to their new place (if needed):
+
+    sudo mkdir -p /Library/Server/Mail/Data
+    sudo mv /var/spool/postfix /Library/Server/Mail/Data/spool
+    sudo mv /var/lib/postfix /Library/Server/Mail/Data/mta
+
+Start the Postfix daemon
+
+    sudo postfix set-permissions
+    sudo postfix start
+
+`set-permissions` might complain about missing man pages. the problem is that
+the new `postfix-files` file has the man pages with `.gz` extension, but they
+were not compressed during the upgrade.
+
+To fix:
+
+    d=/usr/share/man;grep manpage_directory /etc/postfix/postfix-files | cut -d/ -f2- | cut -d: -f1 | grep '\.gz$' | while read f; do echo $f;[ ! -e "$d/$f" -a -e "$d/${f%.gz}" ] && sudo gzip -9v "$d/${f%.gz}";done
+    sudo postfix set-permissions
+
+Then you also might have the following problem:
+
+> postfix/postfix-script: warning: group or other writable: /Library/Server/Mail/Data/mta
+
+To fix edit /etc/postfix/postfix-files:
+
+    sudo vim /etc/postfix/postfix-files
+
+find the line
+
+    $data_directory:d:$mail_owner:-:770:uc
+
+and change 770 to 750. then set-persmissions again and verify:
+
+    sudo postfix set-permissions
+    sudo postfix check
 
 [top](#top)<a name=zsh></a>
 ## ZSH
