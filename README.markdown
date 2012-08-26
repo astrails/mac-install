@@ -69,6 +69,12 @@ In particular make sure to install Xcode.
 * [Skype](http://skype.com)
 * [LaunchBar 5](http://www.obdev.at/products/launchbar/index.html)
 * [iTerm2](http://www.iterm2.com)
+* [GitX](http://gitx.laullon.com)
+
+  `Right-click -> open` to open it for the first time (its not signed)
+
+  After that go to menu `GitX/Enable Terminal Usage...` to enable terminal `gitx` command.
+
 * [Adobe Air](http://get.adobe.com/air/)
 * [HipChat](https://www.hipchat.com)
 * [AppTrap](http://onnati.net/apptrap/)
