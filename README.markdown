@@ -19,6 +19,7 @@ the intent to use and update it whenever I install a new mac.
 * [iPhoto Pictures](#iphoto)
 * [Skype history transfer](#skype)
 * [MySQL](#mysql)
+* [Copy Files](#files)
 * [Preferences](#preferences)
 * [All Descktops Apps](#alldesktopapps)
 * [Homebrew](#homebrew)
@@ -35,6 +36,7 @@ the intent to use and update it whenever I install a new mac.
 * [Nodejs](#nodejs)
 * [POW](#pow)
 * [Backblaze](#backblaze)
+* [ScanSnap](#scansnap)
 
 * [Copyright](#copy)
 
@@ -69,12 +71,15 @@ In particular make sure to install Xcode.
 * [Skype](http://skype.com)
 * [LaunchBar 5](http://www.obdev.at/products/launchbar/index.html)
 * [iTerm2](http://www.iterm2.com)
+
+  in Settings/Terminal set 'Unlimited scrollback'
 * [GitX](http://gitx.laullon.com)
 
   `Right-click -> open` to open it for the first time (its not signed)
 
   After that go to menu `GitX/Enable Terminal Usage...` to enable terminal `gitx` command.
 
+* [GrowlNotify](http://growl.info/downloads)
 * [Adobe Air](http://get.adobe.com/air/)
 * [HipChat](https://www.hipchat.com)
 * [AppTrap](http://onnati.net/apptrap/)
@@ -87,6 +92,9 @@ In particular make sure to install Xcode.
 * [Transmission](http://www.transmissionbt.com)
 * [VLC](http://www.videolan.org/)
 * [Things](http://culturedcode.com/things/)
+
+  configure 'ctrl-alt-cmd-n' as quick entry with autofill
+
 * [Stanza](http://www.lexcycle.com)
 
   > Note: site seems to be down. copy from old computer's Applications folder
@@ -98,6 +106,9 @@ In particular make sure to install Xcode.
 
 * [AppFresh](http://metaquark.de/appfresh/mac)
 
+* [Evernote Web Clipper](https://evernote.com/webclipper/)
+
+  Install Evernote from App Store first.
 
 [top](#top)<a name=keychains></a>
 ## Keychains
@@ -158,13 +169,18 @@ like name of the old computer.
 
 
 [top](#top)<a name=files></a>
-## Files
+## Copy Files
 
 Copy the following files over:
 
 * `~/Documents/`
 * `~/Downloads`
 * `~/Desktop/`
+* `~/bin/`
+
+  add `~/bin` to the path:
+
+        echo ~/bin | sudo tee /etc/paths.d/home-bin
 
 [top](#top)<a name=preferences></a>
 ## Preferences
@@ -249,7 +265,7 @@ Change the following apps to be on all descktops:
 * brew install tmux mtr iftop htop-osx gpg2 ctags
 * brew install erlang
 * brew install clojure clojure-contrib leiningen
-* brew install md5deep ack
+* brew install md5deep ack s3cmd unrar
 
 [top](#top)<a name=etc></a>
 ## /etc git
@@ -383,6 +399,9 @@ Verify it works:
 
     git lga
 
+> NOTE: you will need to link this file again each time you install a new
+> version of git
+
 [top](#top)<a name=ssh></a>
 ## SSH
 
@@ -456,6 +475,11 @@ Then:
 
 Open new terminal again and verify that `node` works.
 
+Now we need to install a couple of npm modules:
+
+    npm install -g coffee-script
+    npm install -g js2cofee
+
 [top](#top)<a name=pow></a>
 ## POW
 
@@ -470,6 +494,12 @@ Start backblaze.
 
 Select Transfer Backup State from the Backblaze Menu Icon and follow the steps.
 
+[top](#top)<a name=scansnap></a>
+## ScanSnap
+
+- Download [ScanSnap Manager](http://scansnap.fujitsu.com/g-support/en/)
+  
+  Need to install original software and latest update.
 
 [top](#top)<a name=copy></a>
 ## Copyright
