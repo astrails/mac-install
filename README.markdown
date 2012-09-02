@@ -67,6 +67,9 @@ In particular make sure to install Xcode.
   sign into your gmail account to sync prefs
   (you will need to create a new application specific password if you use 2-phase auth.)
 
+  visit [http://www.google.com/ncr](http://www.google.com/ncr) in every browser
+  you use so that Google will stop redirecting to the stupid local site.
+
 * [Google Drive](https://drive.google.com/start)
 * [Skype](http://skype.com)
 * [LaunchBar 5](http://www.obdev.at/products/launchbar/index.html)
@@ -280,6 +283,11 @@ Change the following apps to be on all descktops:
 [top](#top)<a name=postfix></a>
 ## Postfix
 
+> UPDATE: I just installed a new Air laptop and it had the directories in the
+> main.cf file pointing to the old location, so there was no need to do any of
+> this... To check do `grep data_directory /etc/postfix/main.cf`. IF it points
+> to /Library/... then you might need to do the fixes below.
+
 If you upgraded from Lion your Postfix config is most probably broken.
 The upgrade changes /etc/postfix/main.cf to point to a new set of postfix
 directories but leaves the old directories at their old place.
@@ -352,10 +360,10 @@ and change 770 to 750. then set-persmissions again and verify:
 [top](#top)<a name=inconsolata></a>
 ## [Fonts](#fonts)
 
-wget http://www.levien.com/type/myfonts/Inconsolata.otf -O /Library/Fonts/Inconsolata.otf
-wget https://gist.github.com/raw/1595572/Inconsolata-dz-Powerline.otf -O /Library/Fonts/Inconsolata-dz-Powerline.otf
-wget https://gist.github.com/raw/1595572/Menlo-Powerline.otf -O /Library/Fonts/Menlo-Powerline.otf
-wget https://gist.github.com/raw/1595572/mensch-Powerline.otf -O /Library/Fonts/mensch-Powerline.otf
+- wget http://www.levien.com/type/myfonts/Inconsolata.otf -O /Library/Fonts/Inconsolata.otf
+- wget https://gist.github.com/raw/1595572/Inconsolata-dz-Powerline.otf -O /Library/Fonts/Inconsolata-dz-Powerline.otf
+- wget https://gist.github.com/raw/1595572/Menlo-Powerline.otf -O /Library/Fonts/Menlo-Powerline.otf
+- wget https://gist.github.com/raw/1595572/mensch-Powerline.otf -O /Library/Fonts/mensch-Powerline.otf
 
 
 [top](#top)<a name=dotfiles></a>
