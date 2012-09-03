@@ -369,10 +369,7 @@ and change 770 to 750. then set-persmissions again and verify:
 [top](#top)<a name=dotfiles></a>
 ## Dot files
 
-[top](#top)<a name=dotfiles></a>
-## Dot files
-
-Fork git@github.com:astrails/dotfiles and make changes to suite your needs.
+Fork http://github.com/astrails/dotfiles and make changes to suite your needs.
 You must edit user-gitconfig.
 
 Then:
@@ -425,7 +422,7 @@ Generate ssh keys:
 ## Dotvim
 
     cd ~
-    git clone git@github.com/astrails/dotvim .vim
+    git clone https://github.com/astrails/dotvim.git .vim
     ln -sfn .vim/vimrc .vimrc
 
     cd .vim
@@ -486,7 +483,7 @@ Open new terminal again and verify that `node` works.
 Now we need to install a couple of npm modules:
 
     npm install -g coffee-script
-    npm install -g js2cofee
+    npm install -g js2coffee
 
 [top](#top)<a name=pow></a>
 ## POW
