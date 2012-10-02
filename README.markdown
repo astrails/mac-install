@@ -6,7 +6,7 @@
 This is a step by step guide which was written by me for myself mostly, with
 the intent to use and update it whenever I install a new mac.
 
-    Note: Those instructions were last applied on a fresh Mountain Lion BacBook Pro.
+    Note: Those instructions were last applied on a fresh Mountain Lion MacBook Pro.
 
 <a name=top></a>
 ## Contents
