@@ -83,6 +83,7 @@ In particular make sure to install Xcode.
   After that go to menu `GitX/Enable Terminal Usage...` to enable terminal `gitx` command.
 
 * [GrowlNotify](http://growl.info/downloads)
+* [CCMenu](http://ccmenu.sourceforge.net)
 * [Adobe Air](http://get.adobe.com/air/)
 * [HipChat](https://www.hipchat.com)
 * [AppTrap](http://onnati.net/apptrap/)
@@ -270,6 +271,7 @@ Change the following apps to be on all descktops:
 * brew install erlang
 * brew install clojure clojure-contrib leiningen
 * brew install md5deep ack s3cmd unrar
+* brew install tig
 
 [top](#top)<a name=etc></a>
 ## /etc git
