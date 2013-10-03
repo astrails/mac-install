@@ -115,6 +115,15 @@ In particular make sure to install Xcode.
 
   Install Evernote from App Store first.
 
+* MacUpdate bundle
+
+  From the MacUpdate bundle (stored on s3) install ScreenFlow, KeyCue, Jaksta
+  (licenses are in 1Password)
+
+* [Shortcat](http://shortcatapp.com)
+
+* [Flip4Mac](http://www.telestream.net/flip4mac/overview.htm)
+
 [top](#top)<a name=keychains></a>
 ## Keychains
 
