@@ -181,6 +181,15 @@ like name of the old computer.
         echo /usr/local/mysql/bin | sudo tee /etc/paths.d/mysql
         echo /usr/local/mysql/man | sudo tee /etc/manpaths.d/mysql
 
+### Library not loaded: libmysqlclient.18.dylib
+
+If you get this error the magic incantation to fix it is this:
+
+    sudo install_name_tool -change libmysqlclient.18.dylib /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/local/rvm/gems/ruby-1.9.3-p286-falcon/gems/mysql2-0.2.13/lib/mysql2/mysql2.bundle
+
+> NOTE: you need to use your real mysql2.bundle path. to find it out do:
+
+    gem which mysql2
 
 [top](#top)<a name=files></a>
 ## Copy Files
