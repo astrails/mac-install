@@ -220,6 +220,17 @@ Go to system preferences and adjust the following:
 
   uncheck "When switching to an application, switch to a space with open windows for the application"
 
+* TimeMachine
+
+  Exclude directories from TimeMachine backup
+
+       sudo tmutil addexclusion -p ~/.dropbox
+       sudo tmutil addexclusion -p ~/Dropbox
+       sudo tmutil addexclusion -p ~/Google\ Drive/
+       sudo tmutil addexclusion -p ~/Downloads/
+       sudo tmutil addexclusion -p /usr/local/Cellar
+       sudo tmutil addexclusion -p /usr/local/rvm
+
 * Language & Text
 
   select required input sources
@@ -260,7 +271,7 @@ Go to system preferences and adjust the following:
 
 * Accessability
 
-Enable dragging with Drag Lock on "Mouse & Trackpad/Trackpad Options"
+  Enable dragging with Drag Lock on "Mouse & Trackpad/Trackpad Options"
 
 [top](#top)<a name=alldesktopapps></a>
 ## All Descktops Apps
@@ -519,13 +530,19 @@ Now we need to install a couple of npm modules:
     curl get.pow.cx | sh
 
 [top](#top)<a name=backblaze></a>
-### Backblaze
+## Backblaze
 
 Download and install Backblaze from [backblaze.com](http://backblaze.com/).
 
 Start backblaze.
 
 Select Transfer Backup State from the Backblaze Menu Icon and follow the steps.
+
+### Time Machine
+
+Its important to add backblaze directory to timemachine exclusions list
+
+    sudo tmutil addexclusion -p /Library/Backblaze.bzpkg
 
 [top](#top)<a name=scansnap></a>
 ## ScanSnap
