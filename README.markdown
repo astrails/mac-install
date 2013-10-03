@@ -401,14 +401,21 @@ First note the path of the system gitconfig file:
 
 Link to /etc (use the path from previous command). e.g.:
 
-    sudo ln -sfn /etc/gitconfig /usr/local/Cellar/git/1.7.11.4/etc/gitconfig
+    # for older versions of git this will be something like
+    sudo ln -sfn /etc/gitconfig /usr/local/Cellar/git/1.7.11.4/etc/
+
+    # for the newer ones:
+    sudo ln -sfn /etc/gitconfig /usr/local/etc/
+
 
 Verify it works:
 
     git lga
 
-> NOTE: you will need to link this file again each time you install a new
-> version of git
+> NOTE: in older versions of brew git system config directory was inside the
+> brew's Cellar, so you had to re-do this every time you installed a new
+> version of git. The latest versions though, use /usr/local/etc/gitconfig
+> instead, so you only need to do it once.
 
 [top](#top)<a name=ssh></a>
 ## SSH
