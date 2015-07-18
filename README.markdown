@@ -11,6 +11,7 @@ the intent to use and update it whenever I install a new mac.
 <a name=top></a>
 ## Contents
 
+* [Initial Setup](#initialsetup)
 * [AppStore](#appstore)
 * [3rd party](#3rdparty)
 * [Keychains](#keychains)
@@ -18,7 +19,6 @@ the intent to use and update it whenever I install a new mac.
 * [iTunes Music](#itunes)
 * [iPhoto Pictures](#iphoto)
 * [Skype history transfer](#skype)
-* [MySQL](#mysql)
 * [Copy Files](#files)
 * [Preferences](#preferences)
 * [All Descktops Apps](#alldesktopapps)
@@ -41,12 +41,28 @@ the intent to use and update it whenever I install a new mac.
 * [Copyright](#copy)
 
 
+<a name=initialsetup></a>
+## Initial Setup
+
+During the standard initial setup
+
+* wnable FileVault and write down the master password (store in 1Password)
+* do not allow icloud to reset filevault.
+
+After the setup - full suystem update.
+
 <a name=appstore></a>
 ## AppStore
 
 Login into the AppStore, go to "Purchases" and download all relevant apps.
 
 In particular make sure to install Xcode.
+
+Do not install (install non-app-store-version instead):
+
+* Evernote
+* 1Password
+* Things
 
 <a name=3rdparty></a>
 ## 3rd party
@@ -56,6 +72,15 @@ In particular make sure to install Xcode.
 > change Gatekeeper preferences. There is a *better* workaround though. Right
 > click and select 'Open', this time you will have an additional optin to open
 > it regardless of the Gatekeeper settings.
+
+* [Send to Kindle](https://www.amazon.com/gp/sendtokindle)
+
+  > Note: KindleReader comes from AppStore.
+
+* [Evernote](https://www.evernote.com)
+* [Evernote Web Clipper](https://evernote.com/webclipper/)
+
+  Install Evernote from App Store first.
 
 * [Dropbox](https://www.dropbox.com)
 * [1Password](https://agilebits.com/onepassword)
@@ -72,29 +97,18 @@ In particular make sure to install Xcode.
 
 * [Google Drive](https://drive.google.com/start)
 * [Skype](http://skype.com)
-* [LaunchBar 5](http://www.obdev.at/products/launchbar/index.html)
 * [iTerm2](http://www.iterm2.com)
 
-  in Settings/Terminal set 'Unlimited scrollback'
-* [GitX](http://gitx.laullon.com)
+  in Settings -> Profiles -> Terminal set 'Unlimited scrollback'
 
-  `Right-click -> open` to open it for the first time (its not signed)
+* [Slate](https://github.com/jigish/slate)
+* [POW](http://pow.cx)
 
-  After that go to menu `GitX/Enable Terminal Usage...` to enable terminal `gitx` command.
+        curl get.pow.cx | sh
 
-* [GrowlNotify](http://growl.info/downloads)
 * [CCMenu](http://ccmenu.sourceforge.net)
 * [Adobe Air](http://get.adobe.com/air/)
-* [HipChat](https://www.hipchat.com)
 * [AppTrap](http://onnati.net/apptrap/)
-* [Postgress.app](http://postgresapp.com)
-
-  To create postgres user without a password like in 'regular' postgres installation:
-
-        createuser --no-password -h localhost postgres
-        echo /Applications/Postgres.app/Contents/MacOS/bin | sudo tee /etc/paths.d/postgres
-* [SequelPro](http://www.sequelpro.com)
-* [Transmission](http://www.transmissionbt.com)
 * [VLC](http://www.videolan.org/)
 * [Things](http://culturedcode.com/things/)
 
@@ -105,20 +119,13 @@ In particular make sure to install Xcode.
   > Note: site seems to be down. copy from old computer's Applications folder
   > instead
 
-* [Calibre](http://calibre-ebook.com)
-
-  Choose ~/Dropbox/books as the library location
-
-* [AppFresh](http://metaquark.de/appfresh/mac)
-
-* [Evernote Web Clipper](https://evernote.com/webclipper/)
-
-  Install Evernote from App Store first.
-
 * MacUpdate bundle
 
-  From the MacUpdate bundle (stored on s3) install ScreenFlow, KeyCue, Jaksta
-  (licenses are in 1Password)
+  From the MacUpdate bundle (stored on s3) install: (licenses are in 1Password)
+
+  * ScreenFlow
+  * KeyCue
+  * Jaksta
 
 * [Shortcat](http://shortcatapp.com)
 
@@ -166,30 +173,6 @@ like name of the old computer.
   and open it at the same place at the new computer. The path is:
   
         ~/Library/Application Support/Skype/YOUR_SKYPE_ID
-
-[top](#top)<a name=mysql></a>
-## MySQL
-
-* Download 64bit Community Server DMG archive from [MySQL](http://mysql.com).
-* Mount it
-* install 3 components:
-  * mysql
-  * MySQL.prefpane
-  * MySQLStartupItem
-* setup paths:
-
-        echo /usr/local/mysql/bin | sudo tee /etc/paths.d/mysql
-        echo /usr/local/mysql/man | sudo tee /etc/manpaths.d/mysql
-
-### Library not loaded: libmysqlclient.18.dylib
-
-If you get this error the magic incantation to fix it is this:
-
-    sudo install_name_tool -change libmysqlclient.18.dylib /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/local/rvm/gems/ruby-1.9.3-p286-falcon/gems/mysql2-0.2.13/lib/mysql2/mysql2.bundle
-
-> NOTE: you need to use your real mysql2.bundle path. to find it out do:
-
-    gem which mysql2
 
 [top](#top)<a name=files></a>
 ## Copy Files
@@ -295,7 +278,8 @@ Change the following apps to be on all descktops:
 * Install [Xquartz](http://xquartz.macosforge.org/) of at least version 2.7.2
   > NOTE: VERY important to install Xquartz before Homebrew.
 * Install [Homebrew](http://mxcl.github.com/homebrew/).
-* brew install macvim git wget imagemagick aria2 dos2unix watch tree pstree
+* brew install macvim --override-system-vim
+* brew install git wget imagemagick aria2 dos2unix watch tree pstree
 * brew install tmux mtr iftop htop-osx gpg2 ctags
 * brew install erlang
 * brew install clojure clojure-contrib leiningen
@@ -523,11 +507,6 @@ Now we need to install a couple of npm modules:
 
     npm install -g coffee-script
     npm install -g js2coffee
-
-[top](#top)<a name=pow></a>
-## POW
-
-    curl get.pow.cx | sh
 
 [top](#top)<a name=backblaze></a>
 ## Backblaze
