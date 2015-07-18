@@ -1,0 +1,125 @@
+#!/bin/bash
+
+function die() { echo "$@"; exit 1; }
+
+if [ '-v' = "$1" ]; then
+  shift
+  function v() { echo "$@" ; }
+else
+  function v() { : ; }
+fi
+
+function ask()
+{
+  echo -n "$*? "
+  read a
+
+  [[ 'y' == "$a" || "Y" == "$a" ]]
+}
+
+function move()
+{
+  v
+  local d="$1"
+
+  if [ -e ~/"$d" ]; then
+    v "~/$d already exists"
+    return 1
+
+  elif [ ! -e ~/2/"$d" ]; then
+    echo "~/2/$d doesn't exist"
+    return 1
+
+  else
+    ask "move ~/$d" &&
+      (set -x; mv ~/2/"$d" ~/"$d")
+    return 0
+  fi
+  v
+}
+
+function lnif() { [ ! -e "$2" ] && ln -vsfn "$1" "$2" ; }
+
+## PRECONDITIONS
+
+[ -e ~/2 ] || die "Error: Please link ~/2 to the old hard drive"
+
+## TRIVIAL BASICS
+
+lnif ~/Downloads ~/d
+
+## BREW
+
+if [ -z "`which brew`" ]; then
+  ask "install brew" &&
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+  v brew installed
+fi
+
+function brew_ensure()
+{
+  if [ ! -d /usr/local/Cellar/$1 ]; then
+    (set -x; brew install $*)
+  else
+    v brew: $1 already installed
+  fi
+}
+
+function brew_install()
+{
+  for pkg in "$@"; do
+    brew_ensure $pkg
+  done
+}
+
+brew_install "macvim --override-system-vim" \
+  aria2 ack ctags direnv pstree s3cmd \
+  tig tmux tree unrar watch wget dos2unix \
+  gettext imagemagick md5deep mtr git gnupg2 \
+  htop-osx iftop
+
+brew_install zsh zsh-completions
+
+brew_install docker docker-machine docker-swarm
+
+brew_install erlang elixir
+
+brew_install postgresql leiningen
+
+
+## BASICS
+
+move .vim &&
+  (set -x; make -C ~/.vim install)
+
+move .dot &&
+  (set -x; make -C ~/.dot install)
+
+move .g
+
+## DEV ENV
+
+move a
+
+lnif ~/a/dev ~/dev
+
+## POW
+
+if [ ! -d ~/"Library/Application Support/Pow/Hosts" ]; then
+  ask "install pow" &&
+    (set -x; curl get.pow.cx | sh)
+fi
+
+POW="Library/Application Support/Pow/Hosts"
+if [ -e "$POW" ]; then
+  lnif "$POW" ~/.pow
+fi
+
+if [ -d ~/2/"$POW" ]; then
+  rmdir ~/"$POW"
+  move "Library/Application Support/Pow/Hosts"
+  rm -v ~/2/.pow
+fi
+
+move .zsh
