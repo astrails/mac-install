@@ -17,10 +17,11 @@ function ask()
   [[ 'y' == "$a" || "Y" == "$a" ]]
 }
 
-function move()
+function op()
 {
   v
-  local d="$1"
+  local op="$2"; shift
+  local d="$1"; shift
 
   if [ -e ~/"$d" ]; then
     v "~/$d already exists"
@@ -31,12 +32,15 @@ function move()
     return 1
 
   else
-    ask "move ~/$d" &&
-      (set -x; mv ~/2/"$d" ~/"$d")
+    ask "$op ~/$d" &&
+      (set -x; $op ~/2/"$d" ~/"$d")
     return 0
   fi
   v
 }
+
+function move() { op mv "$@" ; }
+function copy() { op cp "$@" ; }
 
 function lnif() { [ ! -e "$2" ] && ln -vsfn "$1" "$2" ; }
 
@@ -87,7 +91,6 @@ brew_install erlang elixir
 
 brew_install postgresql leiningen
 
-
 ## BASICS
 
 move .vim &&
@@ -123,3 +126,20 @@ if [ -d ~/2/"$POW" ]; then
 fi
 
 move .zsh
+
+## KEYCHAINS
+
+KEYCHAINS="Library/Keychains"
+for k in ~/2/$KEYCHAINS/*.keychain; do
+  f=~/$KEYCHAINS/"old_$(basename $k)"
+  if [ -e "$f" ]; then
+    if diff -q "$k" "$f"; then
+      v already copied $k
+    else
+      echo "WARNING: keychains: $k and $f differ"
+    fi
+  else
+    ask "copy keychain $k" &&
+      cp -v "$k" "$f"
+  fi
+done
