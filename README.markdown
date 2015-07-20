@@ -58,7 +58,7 @@ Login into the AppStore, go to "Purchases" and download all relevant apps.
 
 In particular make sure to install Xcode.
 
-Do not install (install non-app-store-version instead):
+Do *NOT* install (install non-app-store-version instead):
 
 * Evernote
 * 1Password
@@ -87,6 +87,8 @@ Do not install (install non-app-store-version instead):
 
   > IMPORTANT: Make sure Dropbox finished sync before you open your 1password keychain!
 
+  Install [browser plugins](https://agilebits.com/onepassword/extensions)
+
 * [Google Chrome](http://www.google.com/chrome/)
 
   sign into your gmail account to sync prefs
@@ -96,20 +98,28 @@ Do not install (install non-app-store-version instead):
   you use so that Google will stop redirecting to the stupid local site.
 
 * [Google Drive](https://drive.google.com/start)
+* [Mailplane 3](http://mailplaneapp.com)
 * [Skype](http://skype.com)
+* [Alfred](http://www.alfredapp.com)
+* [Bartender](http://www.macbartender.com)
 * [iTerm2](http://www.iterm2.com)
 
   in Settings -> Profiles -> Terminal set 'Unlimited scrollback'
 
 * [Slate](https://github.com/jigish/slate)
+
+  Note: config provided by .dot.
+
 * [POW](http://pow.cx)
 
         curl get.pow.cx | sh
 
+* [VirtualBox](https://www.virtualbox.org)
 * [CCMenu](http://ccmenu.sourceforge.net)
 * [Adobe Air](http://get.adobe.com/air/)
 * [AppTrap](http://onnati.net/apptrap/)
 * [VLC](http://www.videolan.org/)
+* [Sonos Controller](http://www.sonos.com/support)
 * [Things](http://culturedcode.com/things/)
 
   configure 'ctrl-alt-cmd-n' as quick entry with autofill
@@ -118,6 +128,8 @@ Do not install (install non-app-store-version instead):
 
   > Note: site seems to be down. copy from old computer's Applications folder
   > instead
+
+### not sure if still needed
 
 * MacUpdate bundle
 
@@ -130,6 +142,7 @@ Do not install (install non-app-store-version instead):
 * [Shortcat](http://shortcatapp.com)
 
 * [Flip4Mac](http://www.telestream.net/flip4mac/overview.htm)
+
 
 [top](#top)<a name=keychains></a>
 ## Keychains

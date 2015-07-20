@@ -1,0 +1,17 @@
++ move skype
+
+
+
+- move messages
+
+- refactor dedupper
+- dedupp ~/a/
+  - do not ever remove - only move to another dir
+
+- upgrade script
+
+- move documents
+- move desktop
+- move itunes
+- move photos
+
