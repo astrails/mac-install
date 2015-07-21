@@ -1,56 +1,112 @@
 #!/bin/bash
 
-function die() { echo "$@"; exit 1; }
+NC='\033[0m'
+
+BLACK=`tput setaf 0`
+RED=`tput setaf 1`
+GREEN=`tput setaf 2`
+YELLOW=`tput setaf 3`
+BLUE=`tput setaf 4`
+MAGENTA=`tput setaf 5`
+CYAN=`tput setaf 6`
+WHITE=`tput setaf 7`
+
+BOLD=`tput bold`
+
+BG_RED=`tput setab 1`
+BG_YELLOW=`tput setab 3`
+
+function info() { echo -e "${BLUE}${BOLD}INFO:${NC}${BLUE} $@${NC}"; }
+function warn() { echo -e "\n${BG_YELLOW}${BLACK}WARNING:${NC}${YELLOW}${BOLD} $@${NC}\n"; }
+function error() { echo -e "\n${BG_RED}${BLACK}ERROR:${NC}${RED}${BOLD} $@${NC}\n\n"; }
+
+function die() { error "$@"; exit 1; }
 
 if [ '-v' = "$1" ]; then
   shift
-  function v() { echo "$@" ; }
+  V=v
 else
-  function v() { : ; }
+  V=
 fi
+
+function l() { [ -n "$V" ] && echo; }
+function i() { [ -n "$V" ] && info "$@"; }
+function w() { [ -n "$V" ] && warn "$@"; }
+
+OLD_ROOT=~/2
+OLD_HOME=~/2$HOME
+function old_present() { [ -h $OLD_ROOT -a -e $OLD_ROOT ]; }
 
 function ask()
 {
-  echo -n "$*? "
+  echo
+  echo -ne "${GREEN}${BOLD}$*?${NC} "
   read a
 
   [[ 'y' == "$a" || "Y" == "$a" ]]
 }
 
-function op()
+function from_home()
 {
-  v
+  old_present || return # silently skip
+  l
   local op="$1"; shift
   local d="$1"; shift
 
   if [ -e ~/"$d" ]; then
-    v "~/$d already exists"
+    i "~/$d already exists"
     return 1
 
-  elif [ ! -e ~/2/"$d" ]; then
-    echo "~/2/$d doesn't exist"
+  elif [ ! -e $OLD_HOME/"$d" ]; then
+    w "$OLD_HOME/$d doesn't exist"
     return 1
 
   else
-    ask "$op ~/$d" &&
-      (set -x; $op ~/2/"$d" ~/"$d")
+    ask "$op ~/$d from old homedir" &&
+      (set -x; $op $OLD_HOME/"$d" ~/"$d")
     return 0
   fi
-  v
+  l
 }
 
-function move() { op mv "$@" ; }
-function copy() { op cp "$@" ; }
+function home_move() { from_home mv "$@" ; }
+function home_copy() { from_home cp "$@" ; }
 
-function lnif() { [ ! -e "$2" ] && ln -vsfn "$1" "$2" ; }
+function _ln()
+{
+  if [ -e "$2" ]; then
+    [ ! -h "$2" ] \
+      && warn "'$2' is exists and is not a link" \
+      || ln -sfn$V "$1" "$2"
+  else
+    ln -sfnv "$1" "$2" # creating link, always verbose
+  fi
+}
+
+################################################################################
+################################################################################
 
 ## PRECONDITIONS
 
-[ -e ~/2 ] || die "Error: Please link ~/2 to the old hard drive"
+old_present || warn "Please link $OLD_ROOT to the old drive root"
+
+## 'MY' DIR
+
+home_move "my"
+
+if [ -d ~/my ]; then
+  _ln my/astrails      ~/a
+  _ln my/config/dotzsh ~/.zsh
+  _ln my/config/dotvim ~/.vim
+  _ln my/config/dotfiles ~/.dot
+  _ln my/config/dirs ~/.g
+  _ln my/config/auth ~/.auth
+fi
+
 
 ## TRIVIAL BASICS
 
-lnif ~/Downloads ~/d
+_ln ~/Downloads ~/d
 
 ## BREW
 
@@ -63,7 +119,7 @@ if [ -z "`which brew`" ]; then
   ask "install brew" &&
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
-  v brew installed
+  i brew installed
 fi
 
 function brew_ensure()
@@ -71,7 +127,7 @@ function brew_ensure()
   if [ ! -d /usr/local/Cellar/$1 ]; then
     (set -x; brew install $*)
   else
-    v brew: $1 already installed
+    i brew: $1 already installed
   fi
 }
 
@@ -96,22 +152,6 @@ brew_install erlang elixir
 
 brew_install postgresql leiningen
 
-## BASICS
-
-move .vim &&
-  (set -x; make -C ~/.vim install)
-
-move .dot &&
-  (set -x; make -C ~/.dot install)
-
-move .g
-
-## DEV ENV
-
-move a
-
-lnif ~/a/dev ~/dev
-
 ## POW
 
 if [ ! -d ~/"Library/Application Support/Pow/Hosts" ]; then
@@ -120,28 +160,20 @@ if [ ! -d ~/"Library/Application Support/Pow/Hosts" ]; then
 fi
 
 POW="Library/Application Support/Pow/Hosts"
-if [ -e "$POW" ]; then
-  lnif "$POW" ~/.pow
-fi
-
-if [ -d ~/2/"$POW" ]; then
-  rmdir ~/"$POW"
-  move "Library/Application Support/Pow/Hosts"
-  rm -v ~/2/.pow
-fi
-
-move .zsh
+home_move "$POW"
+_ln "$POW" ~/.pow
 
 ## KEYCHAINS
 
 KEYCHAINS="Library/Keychains"
-for k in ~/2/$KEYCHAINS/*.keychain; do
+for k in $OLD_HOME/$KEYCHAINS/*.keychain; do
+  [ -e "$k" ] || continue
   f=~/$KEYCHAINS/"old_$(basename $k)"
   if [ -e "$f" ]; then
     if diff -q "$k" "$f" > /dev/null; then
-      v already copied $k
+      i already copied $k
     else
-      v "WARNING: keychains: $k and $f differ"
+       w "keychains: $k and $f differ"
     fi
   else
     ask "copy keychain $k" &&
@@ -152,13 +184,13 @@ done
 ## Settings
 
 # Mailplane 3
-move "Library/Application Support/Mailplane 3"
+home_move "Library/Application Support/Mailplane 3"
 
-move "Library/Application Support/Alfred 2"
+home_move "Library/Application Support/Alfred 2"
 
-move ".config/direnv"
+home_move ".config/direnv"
 
-move ".ssh"
+home_move ".ssh"
 
 ## FONTS
 
@@ -177,16 +209,14 @@ font https://gist.github.com/raw/1595572/Inconsolata-dz-Powerline.otf
 font https://gist.github.com/raw/1595572/Menlo-Powerline.otf
 font https://gist.github.com/raw/1595572/mensch-Powerline.otf
 
-v "copying fonts"
-cp -n ~/2/$FONTS/* ~/$FONTS
+if old_present; then
+  i "copying fonts"
+  cp -n $OLD_HOME/$FONTS/* ~/$FONTS
+fi
 
 ## Skype
 
-move "Library/Application Support/Skype/vitaly.k"
-
-## Auth
-
-move .auth
+home_move "Library/Application Support/Skype/vitaly.k"
 
 ## pip
 
