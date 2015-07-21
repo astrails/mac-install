@@ -156,6 +156,10 @@ move "Library/Application Support/Mailplane 3"
 
 move "Library/Application Support/Alfred 2"
 
+move ".config/direnv"
+
+move ".ssh"
+
 ## FONTS
 
 FONTS=Library/Fonts
@@ -183,3 +187,15 @@ move "Library/Application Support/Skype/vitaly.k"
 ## Auth
 
 move .auth
+
+## pip
+
+if [ -z "`which pip`" ]; then
+  ask "install python pip" &&
+    sudo easy_install pip
+fi
+
+if [ -z "`which howdoi`" ]; then
+  ask "install howdoi" &&
+    pip install howdoi
+fi

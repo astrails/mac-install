@@ -120,6 +120,7 @@ Do *NOT* install (install non-app-store-version instead):
 * [AppTrap](http://onnati.net/apptrap/)
 * [VLC](http://www.videolan.org/)
 * [Sonos Controller](http://www.sonos.com/support)
+* [Rdio](http://www.rdio.com)
 * [Things](http://culturedcode.com/things/)
 
   configure 'ctrl-alt-cmd-n' as quick entry with autofill
@@ -128,6 +129,8 @@ Do *NOT* install (install non-app-store-version instead):
 
   > Note: site seems to be down. copy from old computer's Applications folder
   > instead
+
+* [Parrot Zik Status](http://vincent-le-normand.github.io/Parrot-Status/)
 
 ### not sure if still needed
 
