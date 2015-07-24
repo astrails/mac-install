@@ -132,6 +132,12 @@ Do *NOT* install (install non-app-store-version instead):
 
 * [Parrot Zik Status](http://vincent-le-normand.github.io/Parrot-Status/)
 
+* [Safari Extensions](https://extensions.apple.com)
+
+  * AdBlock
+  * Click to Flash
+  * Translate
+
 ### not sure if still needed
 
 * MacUpdate bundle
