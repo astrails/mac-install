@@ -11,6 +11,7 @@ source $R/links.sh
 source $R/brew.sh
 source $R/pow.sh
 source $R/keychains.sh
+source $R/apps.sh
 source $R/app_settings.sh
 source $R/files.sh
 source $R/fonts.sh
