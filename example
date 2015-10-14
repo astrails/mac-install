@@ -1,0 +1,45 @@
+# config definition file is just a shell script
+
+# here we define the output format
+# right now only 'sh' is supported ;)
+format sh
+
+# each variable is defined by calling 'ask' and can be preceded by 'default', 'validate' and 'desk'
+
+# defaults gives the default value that will be used if user just pressed ENTER on the prompt
+default 'y'
+
+# validate defines accepted format
+# bool - case insensitive, acceptable values are y, yes, n, no
+# num - number
+# word - sequence of letters
+# sum - sequence of letters, numbers, and '_'
+# str - any non empty string
+# any - anhitng
+#
+# default validation is 'bool'
+validate 'bool'
+
+# description is printed before the prompt and as a comment in the config file
+desc 'this is a boolean variable with default of y'
+
+# this will actually prompt the user and save the answer in config file
+ask ok "understood?"
+
+validate num
+default 123
+ask foo "give me a number"
+
+validate any
+desc "This variable will accept anything, even an empty string"
+default "note that default can contain \"double\" and 'single' quotes"
+ask bar "give me any string"
+
+validate bool
+default y
+ask ask_next "ask the next question?"
+
+if [ 'y' == $ask_next ];then
+  validate any
+  ask next "this is the next question"
+fi

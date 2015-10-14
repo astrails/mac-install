@@ -1,0 +1,65 @@
+#!/bin/bash -e
+
+R=$(cd "`dirname ${BASH_SOURCE[$i]}`/.."; pwd)
+
+source "$R/lib/colors.sh"
+source "$R/lib/ask.sh"
+
+function die()
+{
+  error "$@"
+  exit 1
+}
+
+function raise()
+{
+  local file="${BASH_SOURCE[2]}"
+  local line="${BASH_LINENO[1]}"
+  echo -e "${YELLOW}${file}:${line} ${RED}$@${NC}"
+  exit 1
+}
+
+function usage()
+{
+  blue
+  cat <<END
+Usage: config.sh CONFIG_OUTPUT CONFIG_DEFINITION [CONFIG_DEFINITION]
+END
+  nc
+
+  exit 1
+}
+
+if [[ "-f" == "$1"  ]]; then
+  shift
+  FORCE=1
+else
+  FORCE=
+fi
+
+
+# read config file
+[ -n "$1" ] || usage
+IN="$1"; shift
+[ -e "$IN" ] && source "$IN"
+
+OUT="${IN}.new"
+rm -f "$OUT"
+touch "$OUT"
+
+[ -n "$1" ] || usage
+for f in "$@"; do
+  if [ -e "$f" ]; then
+    source "$f"
+  else
+    die "$f not found"
+  fi
+done
+
+echo
+info DONE
+echo
+
+yellow
+mv -v "${OUT}" "${IN}"
+nc
