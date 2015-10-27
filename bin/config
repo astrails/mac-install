@@ -56,10 +56,8 @@ for f in "$@"; do
   fi
 done
 
+mv "${OUT}" "${IN}"
+
 echo
 info DONE
 echo
-
-yellow
-mv -v "${OUT}" "${IN}"
-nc
