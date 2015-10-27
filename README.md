@@ -4,13 +4,13 @@
 > couldn't find anything that quite fits the bill. I'll be happy to find
 > someone elses tool so that I can stop wasting time ;)
 
-Usage: bin/config `CONFIG_OUTPUT` `CONFIG_DEFINITION` [`CONFIG_DEFINITION` ...]
+Usage: bin/config `CONFIG_OUTPUT` `CONFIG_SCRIPT` [`CONFIG_SCRIPT` ...]
 
 e.g.:
 
     bin/config config example
 
-see `example` file for definition file format
+see `examples` directory for examples of usage
 
 if `CONFIG_OUTPUT` file exists `bin/config` will read it and re-use the values
 inside where possible. to force prompt on each variable, even if it is already

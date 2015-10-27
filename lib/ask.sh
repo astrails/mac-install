@@ -1,11 +1,5 @@
-function format()
-{
-  FORMAT="$1"
-}
-
 function reset()
 {
-  FORMAT=sh
   DESC=
   DEFAULT=
   VALIDATE="bool"
@@ -70,17 +64,13 @@ function _save()
 {
   local name="$1"
   local escaped_value=$(printf %q "$2")
-  case "$FORMAT" in
-    sh)
-      if [ -n "$DESC" ]; then
-        echo "$DESC" | sed -e 's/^/# /' >> "$OUT"
-      fi
-      echo $name=$escaped_value >> "$OUT"
-      echo >> "$OUT"
-      ;;
-    *)
-      die "invalid format '$FORMAT'"
-  esac
+
+  if [ -n "$DESC" ]; then
+    echo "$DESC" | sed -e 's/^/# /' >> "$OUT"
+  fi
+  echo $name=$escaped_value >> "$OUT"
+  echo >> "$OUT"
+
   eval $name=$escaped_value
 }
 
@@ -130,4 +120,10 @@ function ask()
   done
 
   reset
+}
+
+# script helpers
+function is_true()
+{
+  [ 'y' == $(_val "$1") ]
 }

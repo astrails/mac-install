@@ -1,15 +1,11 @@
-# config definition file is just a shell script
-
-# here we define the output format
-# right now only 'sh' is supported ;)
-format sh
+# config SCRIPT file is just a shell script
 
 # each variable is defined by calling 'ask' and can be preceded by 'default', 'validate' and 'desk'
 
-# defaults gives the default value that will be used if user just pressed ENTER on the prompt
+# default gives the value that will be used if user just presses ENTER on the prompt
 default 'y'
 
-# validate defines accepted format
+# validate defines accepted values
 # bool - case insensitive, acceptable values are y, yes, n, no
 # num - number
 # word - sequence of letters
@@ -34,12 +30,3 @@ validate any
 desc "This variable will accept anything, even an empty string"
 default "note that default can contain \"double\" and 'single' quotes"
 ask bar "give me any string"
-
-validate bool
-default y
-ask ask_next "ask the next question?"
-
-if [ 'y' == $ask_next ];then
-  validate any
-  ask next "this is the next question"
-fi
