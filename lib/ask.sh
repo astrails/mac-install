@@ -38,7 +38,8 @@ function _valid()
     bool*) echo "$2" | grep -qiE '^(y(es)?|no?)$' ;;
     num*)  echo "$2" | grep -qiE '^[0-9]+$' ;;
     word)  echo "$2" | grep -qiE '^[a-z]+$' ;;
-    sym)   echo "$2" | grep -qiE '^[a-z0-9_]+$' ;;
+    sym*)   echo "$2" | grep -qiE '^[a-z0-9_]+$' ;;
+    simple) echo "$2" | grep -qiE '^[a-z0-9_ ]+$' ;;
     str*)  [ -n "$2" ] ;;
     any*)  true ;;
 

@@ -6,11 +6,12 @@
 default 'y'
 
 # validate defines accepted values
-# bool - case insensitive, acceptable values are y, yes, n, no
-# num - number
+# bool[ean] - case insensitive, acceptable values are y, yes, n, no
+# num[ber] - number
 # word - sequence of letters
-# sum - sequence of letters, numbers, and '_'
-# str - any non empty string
+# sym[bol] - sequence of letters, numbers, and '_'
+# simple - simple string, basicly symbols with spaces
+# str[ing] - any non empty string
 # any - anhitng
 #
 # default validation is 'bool'
