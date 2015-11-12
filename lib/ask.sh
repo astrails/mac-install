@@ -1,11 +1,41 @@
-function reset()
-{
-  DESC=
-  DEFAULT=
-  VALIDATE="bool"
-}
-reset
+# this script directory
+R=$(cd "`dirname ${BASH_SOURCE[$i]}`"; pwd)
 
+source "$R/colors.sh"
+source "$R/utils.sh"
+
+# check for '-f' parameter
+if [ -z "$DO_NOT_PARSE_FORCE" ]; then
+  if [[ "-f" == "$1"  ]]; then
+    shift
+    ASK_FORCE=1
+  else
+    ASK_FORCE=
+  fi
+fi
+
+# init PATH_TO_SAVE_TO [force?]
+function init()
+{
+  [ -n "$1" ] || raise "missing output file name"
+  OUT="$1"
+
+  # loading results of the previous run
+  [ -e "$OUT" ] && source "$OUT"
+
+  TMPOUT="${OUT}.new"
+  rm -f "$TMPOUT"
+  touch "${TMPOUT}"
+}
+
+function finish()
+{
+  mv "$TMPOUT" "$OUT"
+}
+
+# SUPPORT FUNCTIONS
+
+DESC=
 function desc()
 {
   if [ -n "$1" ]; then
@@ -15,24 +45,14 @@ function desc()
   fi
 }
 
-function validate()
-{
-  VALIDATE="$*"
-}
-
-function default()
-{
-  DEFAULT="$1"
-}
-
-function _ask()
+function _prompt()
 {
   echo -en "${GREEN}${1}"
   [ -n "$2" ] && echo -en " ${CYAN}[$2]"
   echo -en ": ${YELLOW}"
 }
 
-function _valid()
+function _validate()
 {
   case "$1" in
     bool*) echo "$2" | grep -qiE '^(y(es)?|no?)$' ;;
@@ -67,28 +87,30 @@ function _save()
   local escaped_value=$(printf %q "$2")
 
   if [ -n "$DESC" ]; then
-    echo "$DESC" | sed -e 's/^/# /' >> "$OUT"
+    echo "$DESC" | sed -e 's/^/# /' >> "$TMPOUT"
   fi
-  echo $name=$escaped_value >> "$OUT"
-  echo >> "$OUT"
+  echo $name=$escaped_value >> "$TMPOUT"
+  echo >> "$TMPOUT"
 
   eval $name=$escaped_value
 }
 
-function _val()
-{
-  eval "echo \$$1"
-}
-
 function ask()
 {
-  if [ -z "$OUT" ]; then
-    error check your arguments order
-    usage
-  fi
+  [ -n "$TMPOUT" ] || raise "seems like you forgot to call init"
 
-  [ -n "$1" ] || raise "missing name"
+
+  usage="ask TYPE NAME PROMPT [DEFAULT]"
+  [ -n "$1" ] || raise $usage
+  local kind="$1"; shift
+
+  [ -n "$1" ] || raise $usage
   local name="$1"; shift
+
+  [ -n "$1" ] || raise $usage
+  local prompt="$1"; shift
+
+  local default="$1"
 
   echo
 
@@ -98,33 +120,27 @@ function ask()
 
   local a
   while true; do
-    _ask "$*" "$DEFAULT"
+    _prompt "$prompt" "$default"
 
-    local v=$(_val "$name")
+    local v=$(value "$name")
 
-    if [ -z "$FORCE" -a -n "$v" ]; then
+    if [ -z "$ASK_FORCE" -a -n "$v" ]; then
       # try to use previously defined value
       a="$v"
       echo "$a"
       # make sure its not used on next iteration, e.g. if its invalid
       unset "$name"
     else
-      read a; [ -z "$a" ] && a="$DEFAULT"
+      read a; [ -z "$a" ] && a="$default"
     fi
 
-    if _valid "$VALIDATE" "$a"; then
-      _save "$name" "$(_canonic "$VALIDATE" "$a")"
+    if _validate "$kind" "$a"; then
+      _save "$name" "$(_canonic "$kind" "$a")"
       break
     else
-      echo -e "${YELLOW}'$a' ${READ}is not a valid '${VALIDATE}'${NC}"
+      echo -e "${YELLOW}'$a' ${READ}is not a valid '${kind}'${NC}"
     fi
   done
 
-  reset
-}
-
-# script helpers
-function is_true()
-{
-  [ 'y' == $(_val "$1") ]
+  DESC=
 }

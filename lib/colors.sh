@@ -26,7 +26,3 @@ function white()   { echo -en $WHITE;   }
 
 BG_RED='\033[41m'
 BG_YELLOW='\033[43m'
-
-function info()  { echo -e "${BLUE}$@${NC}";   }
-function warn()  { echo -e "${YELLOW}$@${NC}"; }
-function error() { echo -e "${RED}$@${NC}";    }
