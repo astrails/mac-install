@@ -28,5 +28,7 @@ app "Sonos.app" "http://www.sonos.com/support"
 app "Sonos.app" "http://www.rdio.com"
 app "Things.app" "http://culturedcode.com/things/"
 app "Parrot Status.app" "http://vincent-le-normand.github.io/Parrot-Status/"
+app "OpenOffice.app" "https://www.openoffice.org"
+app "Backblaze.app" "http://backblaze.com/"
 
 #app "Stanza.app" "http://www.lexcycle.com"

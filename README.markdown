@@ -46,7 +46,7 @@ the intent to use and update it whenever I install a new mac.
 
 During the standard initial setup
 
-* wnable FileVault and write down the master password (store in 1Password)
+* enable FileVault and write down the master password (store in 1Password)
 * do not allow icloud to reset filevault.
 
 After the setup - full suystem update.

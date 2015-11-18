@@ -8,3 +8,5 @@ home_move ".config/direnv"
 home_move ".ssh"
 
 home_move "Library/Application Support/Skype/vitaly.k"
+
+home_move "Library/Containers/com.apple.Preview/Data/Library/Preferences/com.apple.Preview.signatures.plist"

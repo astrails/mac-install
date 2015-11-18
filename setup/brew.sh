@@ -44,3 +44,6 @@ brew_install docker docker-machine docker-swarm
 brew_install erlang elixir
 
 brew_install postgresql leiningen
+
+# readline wrapper for any command line utility
+brew install rlwrap

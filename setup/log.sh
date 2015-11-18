@@ -27,6 +27,6 @@ else
   V=
 fi
 
-function l() { [ -n "$V" ] && echo; }
+function l() { [ -n "$V" ] && echo "$@"; }
 function i() { [ -n "$V" ] && info "$@"; }
 function w() { [ -n "$V" ] && warn "$@"; }
