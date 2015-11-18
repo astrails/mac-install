@@ -1,8 +1,8 @@
 # this script directory
-R=$(cd "`dirname ${BASH_SOURCE[$i]}`"; pwd)
+ASK_LIB=$(cd "`dirname ${BASH_SOURCE[$i]}`"; pwd)
 
-source "$R/colors.sh"
-source "$R/utils.sh"
+source "$ASK_LIB/colors.sh"
+source "$ASK_LIB/utils.sh"
 
 # check for '-f' parameter
 if [ -z "$DO_NOT_PARSE_FORCE" ]; then
