@@ -39,13 +39,3 @@ function from_home()
 function home_move() { from_home mv "$@" ; }
 function home_copy() { from_home cp "$@" ; }
 
-function _ln()
-{
-  if [ -e "$2" ]; then
-    [ ! -h "$2" ] \
-      && warn "'$2' is exists and is not a link" \
-      || ln -sfn$V "$1" "$2"
-  else
-    ln -sfnv "$1" "$2" # creating link, always verbose
-  fi
-}

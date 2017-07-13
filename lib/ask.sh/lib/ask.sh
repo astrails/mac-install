@@ -4,16 +4,6 @@ ASK_LIB=$(cd "`dirname ${BASH_SOURCE[$i]}`"; pwd)
 source "$ASK_LIB/colors.sh"
 source "$ASK_LIB/utils.sh"
 
-# check for '-f' parameter
-if [ -z "$DO_NOT_PARSE_FORCE" ]; then
-  if [[ "-f" == "$1"  ]]; then
-    shift
-    ASK_FORCE=1
-  else
-    ASK_FORCE=
-  fi
-fi
-
 # init PATH_TO_SAVE_TO [force?]
 function init()
 {

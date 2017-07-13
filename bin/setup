@@ -1,12 +1,35 @@
-#!/bin/bash
+#!/bin/bash -e
 
-R="`dirname "$0"`"/../setup
+R=$(cd "`dirname ${BASH_SOURCE[$i]}`/.."; pwd)
 
-source $R/log.sh
+source "$R/lib/ask.sh/lib/ask.sh"
+
+init .config
+
+source "$R/lib/args.sh"
+source "$R/lib/utils.sh"
+
+# HANDLE OLD HOME DIRECTORY MOUNT
+
+is_true handle_old_home && unset handle_old_home # only remember 'NO'
+desc <<END
+If you mount your old hard drive we can copy applications and settings from
+  your old home directory.
+END
+ask bool handle_old_home "Handle old home directory"
+if is_true handle_old_home; then
+  source "$R/lib/old_home.sh"
+fi
+
+source $R/setup/links.sh
+
+finish
+i 'DONE'
+exit
+
 source $R/utils.sh
 
 home_move "my"
-source $R/links.sh
 
 source $R/brew.sh
 source $R/pow.sh

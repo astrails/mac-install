@@ -36,6 +36,7 @@ Valid types:
 - `str[ing]` - any non empty string
 - `any` - anhitng
 
+> NOTE: define  `ASK_FORCE=1` to force ask even if existing answer exists
 
 ## Examples
 
