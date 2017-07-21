@@ -4,6 +4,8 @@ tap "caskroom/cask"
 tap "caskroom/versions"
 tap "caskroom/drivers"
 
+cask_args appdir: "/Applications"
+
 brew "ack"
 brew "aria2"
 brew "arp-scan"
@@ -57,6 +59,8 @@ brew "zsh-completions"
 brew "unison"
 brew "dos2unix"
 brew "heroku"
+brew "syncthing", restart_service: :changed
+brew "syncthing-inotify", restart_service: :changed
 
 cask "launchcontrol"
 cask "anaconda"
@@ -93,3 +97,4 @@ cask "vagrant"
 cask "synergy"
 cask "mailplane"
 cask "1password"
+cask "zerotier-one"

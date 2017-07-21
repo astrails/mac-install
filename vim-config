@@ -1,0 +1,275 @@
+# Your installation directory is /Users/vitaly/.vim2
+#      Make sure you link:
+#        ~/.vim -> "/Users/vitaly/.vim2"
+#      Depending on your version of vim you might also need to link:
+#        ~/.vimrc -> "/Users/vitaly/.vim2/vimrc"
+# 
+# > Note: you can override the default directory by passing VIM_DIR to make: 'VIM_DIR=... make'
+# : I understand
+vimdir_warning=y
+
+# You don't have ~/.vimrc file. Newer versions of Vim can use ~/.vim/vimrc, but older versions require ~/.vimrc
+# so you might need to create a link.
+# Valid options:
+# 1: ignore - I'll handle the link myself
+# 2: link   - create link ~/.vimrc -> '/Users/vitaly/.vim2/vimrc'
+# : How to handle missing ~/.vimrc link?
+vimrc_link=ignore
+
+# 
+# : initialize git in target directory?
+init_git=y
+
+# With this "on", every time you yank in vim it will be immediately available in
+# the system clipboard, as if you did '"+y'.
+# 
+# I admit, it sounds like a terrific idea, I was all to tired to '"+yy' and
+# stuff. But since I turned this on, I was having a different kind of problem.
+# 
+# Before the switch I'd copy something from a web page, and then do e.g.
+# 'cib<Apple>V' to replace content of a block with whatever I copied.  Now it no
+# longer works. As soon as you 'cib' the content of the block replaces your
+# clipboard content, so you end up pasting it all back, duh! :)
+# 
+# And to add insult to the injury, whatever you copied is not on the yank ring history.
+# 
+# So... I'm still trying to make use of this as I'm all to tired of '"+y', but I
+# decided to make this configurable, as not everyone might want to invest the time
+# to rewire muscle memory ;)
+# : "merge" vim and system clipboards?
+system_clipboard=y
+
+# What plugin to use to visualize indentation level:
+# Valid options:
+# 1: guides - Indent-Guides
+# 2: lines  - Yggdroot/indentLine
+# 3: -      - none
+# : indentation plugin?
+visual_indent=lines
+
+# 
+# : install NerdTree(and tools) and NerdCommenter?
+nerdtools=y
+
+# 
+# : Install NerdTree?
+nerdtree=y
+
+# A plugin of NERDTree showing git status flags.
+# : install nerdtree-git-plugin plugin?
+nerdtree_git=y
+
+# 
+# : Install NerdTreeTabs?
+nerdtree_tabs=y
+
+# switch.vim is a simple Vim plugin to switch segments of text with predefined replacements.
+# 
+# e.g. switch 'foo' with "foo" with :foo etc
+# : Install switch.vim?
+switch_vim=y
+
+# > Note: if YouCompleteMe installation fails, try to running it manually with "make completion"
+# : use text & code completion with YouCompleteMe?
+code_completion=n
+
+# unite.vim plug-in can search and display information from arbitrary sources
+# like files, buffers, recently used files or registers. You can run several
+# pre-defined actions on a target displayed in the unite window.
+# 
+# Using this plugin we can implement many of the functionalities usually provided
+# by in other ways. e.g. we can use unite.vim to choose buffers, files, yank
+# history, etc
+# : configure unite.vim?
+unite_vim=y
+
+# CtrlP
+# 
+# Full path fuzzy file, buffer, mru, tag, ... finder with an intuitive interface.
+# Written in pure Vimscript for MacVim, gVim and Vim version 7.0+. Has full
+# support for Vim's |regexp| as search pattern, built-in MRU files monitoring,
+# project's root finder, and more.
+# : install ctrlP?
+ctrl_p=y
+
+# Fzf
+# 
+# A command-line fuzzy finder written in Go + vim configuration.
+# : use fzf?
+use_fzf=y
+
+# What plugin to use for fuzzy file search?:
+# 
+# Note: this only affect which of the options will be bound to '<leader>,'
+# Valid options:
+# 1: fzf   - use ':Files' from FZF
+# 2: unite - use ':Unite file_rec/async:!'
+# 3: ctrlp - use ':CtrlP'
+# : files search with?
+fuzzy_files=fzf
+
+# What plugin to use for fuzzy buffer switching?:
+# 
+# Note: this only affect which of the options will be bound to '<leader>b'
+# Valid options:
+# 1: unite - use ":Unite buffer"
+# 2: ctrlp - use ":CtrlPBuff"
+# 3: fzf   - use FZF ":Buffers"
+# : buffer search with?
+fuzzy_buffers=unite
+
+# Search for an entry in the current quickfix errors and jump to it.
+# We can use several plugins for it:
+# Note: 'osyo-manga/unite-quickfix' plugin will be installed if you choose 'unite' option.
+# Valid options:
+# 1: unite - use ':Unite quickfix'
+# 2: ctrlp - use ':CtrlPQuickfix'
+# : quickfix search with?
+fuzzy_quickfix=ctrlp
+
+# Search using AG - The Silver Searcher
+# https://github.com/ggreer/the_silver_searcher
+# Valid options:
+# 1: fzf      - use ":Ag" from FZF
+# 2: vim-ag   - use ":Ag" from vim-ag plugin
+# : Which AG to use?
+ag=vim-ag
+
+# Search through the lines in all loaded buffers
+# Valid options:
+# 1: fzf   - use ":Lines" from FZF
+# 2: ctrlp - use ":CtrlPLine"
+# : lines search with?
+fuzzy_lines=fzf
+
+# Tag search
+# Valid options:
+# 1: fzf   - use ":Tags" from FZF
+# 2: unite - use ":Unite tags"
+# 3: ctrlp - use ":CtrlPTags"
+# : tags search with?
+fuzzy_tags=fzf
+
+# YankRing is better IMHO, but you might prefer a unified interface ;)
+# Valid options:
+# 1: yankring - use dedicated yankring plgin
+# 2: unite -    use ":Unite history/yank"
+# : yank history search with?
+fuzzy_yank=yankring
+
+# 
+# : Plugins for developers?
+development=y
+
+# Vim plugin, provides insert mode auto-completion for quotes, parens, brackets, etc.
+# : Install delimitmate?
+delimitmate=y
+
+# 
+# : Use neoformat?
+neoformat=y
+
+# 
+# : Use Syntastic?
+syntastic=n
+
+# 
+# : Manage ctags with vim-gutentags?
+dev_tags=n
+
+# 
+# : Syntax and Filetypes (languages) support
+dev_lang=y
+
+# 
+# : Dockerfile support?
+dockerfile=y
+
+# 
+# : Elixir support?
+elixir=y
+
+# 
+# : Elm support?
+elm=y
+
+# I found 2 elm plugins for vim, still hasn't decided which one is the best ;)
+# 
+# This lets you switch easily
+# Valid options:
+# 1: lambdatoast - use lambdatoast/elm.vim plugin
+# 2: ElmCast     - use ElmCast/elm-vim plugin
+# : elm plugin?
+elm_plugin=ElmCast
+
+# 
+# : Go support?
+go=n
+
+# Hi-speed HTML editing.
+# 
+# emmet-vim is a vim plug-in which provides support for expanding abbreviations similar to emmet.
+# 
+# See http://emmet.io
+# : Use emmet-vim?
+emmet=y
+
+# 
+# : Javascript support?
+javascript=y
+
+# 
+# : Coffeescript support?
+coffeescript=y
+
+# VIM 'concealing' feature allows hiding stretches of text, based on syntax
+# highlighting.  It also allows replacing a stretch of text by a character.
+# 
+# If you answer 'yes', we will replace 'function' with 'ƒ', 'NaN' with "ℕ", etc.
+# 
+# You can see the complete configuration in
+# plugins/60-lang/plugins/javascript/plugins/conceal/files/vimrc.plugins
+# : Configure 'concealing' for javascript
+js_conceal=n
+
+# 
+# : JSON support?
+json=y
+
+# I don't like vim conceal feature when applied to json files.
+# Strings loose quotes around them, and it's a bit confusing when you try to edit them.
+# : disable conceal for json?
+disable_json_conceal=y
+
+# 
+# : Markdown support?
+markdown=y
+
+# 
+# : Raml support?
+raml=y
+
+# 
+# : Ruby support?
+ruby=y
+
+# 
+# : HAML support?
+haml=y
+
+# 
+# : Ruby on Rails support?
+rails=y
+
+# 
+# : Rust support?
+rust=y
+
+# 
+# : tmux config file support?
+tmux=y
+
+# 
+# : TypeScript support?
+javascript=y
+
