@@ -1,6 +1,11 @@
 help:
 	@echo make brew
 	@echo make link
+	@echo make dot
+	@echo make etc-git
+	@echo make zsh
+	@echo make vim
+	@echo make ruby
 
 brew:
 	${MAKE} -C brew
@@ -31,4 +36,10 @@ zsh:
 vim: ~/.vim/.config
 	VIM_DIR=${HOME}/.vim ${MAKE} -C ~/my/config/dotvim2
 
-.PHONY: brew link dot zsh vim
+ruby:
+	ruby-install --no-reinstall ruby-2.1
+	ruby-install --no-reinstall ruby-2.2
+	ruby-install --no-reinstall ruby-2.3
+	ruby-install --no-reinstall ruby-2.4
+
+.PHONY: brew link dot zsh vim ruby

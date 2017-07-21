@@ -14,7 +14,7 @@ $L my/files/txt txt
 $L my/config/dotzsh .zsh
 $L .zsh/zshrc .zshrc
 $L my/dev/nvm .nvm
-#$L my/xxx xxx
+$L my/files/docker .docker
 #$L my/xxx xxx
 #$L my/xxx xxx
 #$L my/xxx xxx
