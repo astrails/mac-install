@@ -15,8 +15,8 @@ $L my/config/dotzsh .zsh
 $L .zsh/zshrc .zshrc
 $L my/dev/nvm .nvm
 $L my/files/docker .docker
-#$L my/xxx xxx
-#$L my/xxx xxx
+$L my/dev/snippets snippets
+$L Downloads d
 #$L my/xxx xxx
 #$L my/xxx xxx
 #$L my/xxx xxx
