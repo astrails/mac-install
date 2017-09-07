@@ -51,7 +51,7 @@ vim: ~/.vim/.config
 DEFAULT_RUBY ?= ruby-2.4
 REXEC := chruby-exec ${DEFAULT_RUBY} --
 
-RUBIES ?= ruby-2.1 ruby-2.2 ruby-2.3 ruby-2.4
+RUBIES ?= ruby-2.0 ruby-2.1 ruby-2.2 ruby-2.3 ruby-2.4
 
 ruby:
 	for ruby in ${RUBIES}; do ruby-install --no-reinstall $$ruby; chruby-exec $$ruby -- gem install bundler; done

@@ -71,6 +71,7 @@ cask "google-chrome"
 cask "dropbox"
 cask "iterm2"
 cask "vlc"
+cask "iina"
 cask "alfred"
 cask "arq"
 cask "dash"
@@ -96,7 +97,17 @@ cask "vagrant"
 cask "synergy"
 cask "mailplane"
 cask "1password"
-cask "zerotier-one"
-cask "bartender"
-cask "rcenvironment"
 cask "balsamiq-mockups"
+cask "bartender"
+
+# virtual networks
+cask "zerotier-one"
+
+# ENV variables pref pane
+cask "rcenvironment"
+
+# file automation
+cask "hazel"
+
+# flash xards
+cask "anki"
