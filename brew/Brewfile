@@ -3,6 +3,7 @@ tap "homebrew/science"
 tap "caskroom/cask"
 tap "caskroom/versions"
 tap "caskroom/drivers"
+tap "universal-ctags/universal-ctags"
 
 cask_args appdir: "/Applications"
 
@@ -12,7 +13,7 @@ brew "arp-scan"
 brew "libnet"
 brew "arping"
 brew "chruby"
-brew "ctags"
+brew "universal-ctags", args: ["HEAD"]
 brew "direnv"
 brew "editorconfig"
 brew "erlang"
@@ -60,6 +61,11 @@ brew "heroku"
 brew "neovim"
 brew "awscli"
 brew "dehydrated"
+brew "unrar"
+brew "postgresql"
+brew "grc" # colorise stdout with patterns
+brew "ispell" # for emacs spelling support
+brew "emacs"
 
 cask "launchcontrol"
 cask "anaconda"
@@ -90,9 +96,9 @@ cask "torbrowser"
 cask "fritzing"
 cask "evernote"
 cask "minecraft"
-cask "sonos"
+# cask "sonos"
 cask "telegram"
-cask "docker-edge"
+cask "caskroom/versions/docker-edge"
 cask "vagrant"
 cask "synergy"
 cask "mailplane"
@@ -111,3 +117,14 @@ cask "hazel"
 
 # flash xards
 cask "anki"
+
+# screen to gif recorder
+cask "kap"
+
+# HTTP request tool
+cask "postman"
+
+# ping grphing utility
+cask "pingplotter"
+
+cask "caskroom/versions/java8"

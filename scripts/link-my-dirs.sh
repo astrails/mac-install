@@ -13,6 +13,7 @@ $L my/config/mac-install mac-install
 $L my/files/txt txt
 $L my/config/dotzsh .zsh
 $L .zsh/zshrc .zshrc
+$L .zsh/zprofile .zprofile
 $L my/dev/nvm .nvm
 $L my/files/docker .docker
 $L my/dev/snippets snippets
