@@ -18,6 +18,9 @@ $L my/dev/nvm .nvm
 $L my/files/docker .docker
 $L my/dev/snippets snippets
 $L Downloads d
+$L my/files/vimwiki
+$L my/files/tasks .task
+$L my/files/tasks/taskrc .taskrc
 #$L my/xxx xxx
 #$L my/xxx xxx
 #$L my/xxx xxx

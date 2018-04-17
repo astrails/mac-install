@@ -61,11 +61,19 @@ brew "heroku"
 brew "neovim"
 brew "awscli"
 brew "dehydrated"
+brew "certbot"
 brew "unrar"
 brew "postgresql"
 brew "grc" # colorise stdout with patterns
 brew "ispell" # for emacs spelling support
 brew "emacs"
+brew "mutt"
+
+# taskwarrior setup
+brew "task"
+brew "vit"
+brew "tasksh"
+
 
 cask "launchcontrol"
 cask "anaconda"
@@ -128,3 +136,20 @@ cask "postman"
 cask "pingplotter"
 
 cask "caskroom/versions/java8"
+
+
+
+
+
+
+# FOR XING
+brew "ossp-uuid" # for XING
+brew "mysql" # for XING
+brew "zmq"
+brew "scala"
+brew "sbt"
+cask "hipchat"
+cask "sequel-pro"
+cask "tunnelblick"
+
+# vim: ft=ruby
