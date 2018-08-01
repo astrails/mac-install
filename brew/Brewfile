@@ -1,155 +1,165 @@
-tap "homebrew/fuse"
-tap "homebrew/science"
-tap "caskroom/cask"
-tap "caskroom/versions"
-tap "caskroom/drivers"
-tap "universal-ctags/universal-ctags"
+tap 'homebrew/fuse'
+tap 'homebrew/science'
+tap 'caskroom/cask'
+tap 'caskroom/versions'
+tap 'caskroom/drivers'
+tap 'universal-ctags/universal-ctags'
 
-cask_args appdir: "/Applications"
+cask_args appdir: '/Applications'
 
-brew "ack"
-brew "aria2"
-brew "arp-scan"
-brew "libnet"
-brew "arping"
-brew "chruby"
-brew "universal-ctags", args: ["HEAD"]
-brew "direnv"
-brew "editorconfig"
-brew "erlang"
-brew "elixir"
-brew "elm"
-brew "git"
-brew "elm-format"
-brew "fzf"
-brew "gnupg2"
-brew "go"
-brew "graphviz"
-brew "htop-osx"
-brew "iftop"
-brew "imagemagick"
-brew "kubernetes-cli"
-brew "leiningen"
-brew "lua"
-brew "mas"
-brew "md5deep"
-brew "minicom"
-brew "mtr"
-brew "ncurses"
-brew "p7zip"
-brew "pstree"
-brew "pv"
-brew "reattach-to-user-namespace"
-brew "rlwrap"
-brew "ruby-install"
-brew "s3cmd"
-brew "tcpflow"
-brew "terraform"
-brew "the_silver_searcher"
-brew "tig"
-brew "tmate"
-brew "tmux"
-brew "tree"
-brew "watch"
-brew "wget"
-brew "yarn"
-brew "zsh"
-brew "zsh-completions"
-brew "unison"
-brew "dos2unix"
-brew "heroku"
-brew "neovim"
-brew "awscli"
-brew "dehydrated"
-brew "certbot"
-brew "unrar"
-brew "postgresql"
-brew "grc" # colorise stdout with patterns
-brew "ispell" # for emacs spelling support
-brew "emacs"
-brew "mutt"
+brew 'ack'
+brew 'aria2'
+brew 'arp-scan'
+brew 'libnet'
+brew 'arping'
+brew 'chruby'
+brew 'universal-ctags', args: ['HEAD']
+brew 'direnv'
+brew 'editorconfig'
+brew 'erlang'
+brew 'elixir'
+brew 'elm'
+brew 'git'
+brew 'elm-format'
+brew 'fzf'
+brew 'gnupg2'
+brew 'go'
+brew 'graphviz'
+brew 'htop-osx'
+brew 'iftop'
+brew 'imagemagick'
+brew 'kubernetes-cli'
+brew 'leiningen'
+brew 'lua'
+brew 'mas'
+brew 'md5deep'
+brew 'minicom'
+brew 'mtr'
+brew 'ncurses'
+brew 'p7zip'
+brew 'pstree'
+brew 'pv'
+brew 'reattach-to-user-namespace'
+brew 'rlwrap'
+brew 'ruby-install'
+brew 's3cmd'
+brew 'tcpflow'
+brew 'terraform'
+brew 'the_silver_searcher'
+brew 'tig'
+brew 'tmate'
+brew 'tmux'
+brew 'tree'
+brew 'watch'
+brew 'wget'
+brew 'yarn'
+brew 'zsh'
+brew 'zsh-completions'
+brew 'unison'
+brew 'dos2unix'
+brew 'heroku'
+brew 'neovim'
+brew 'awscli'
+brew 'dehydrated'
+brew 'certbot'
+brew 'unrar'
+brew 'postgresql'
+brew 'grc' # colorise stdout with patterns
+brew 'ispell' # for emacs spelling support
+brew 'emacs'
+brew 'mutt'
+brew 'terminal-notifier'
+brew 'rust'
+brew "bashdb"
 
 # taskwarrior setup
-brew "task"
-brew "vit"
-brew "tasksh"
+brew 'task', args: ['HEAD']
+brew 'timewarrior'
+brew 'tasksh'
+brew 'vit'
 
+cask 'launchcontrol'
+cask 'anaconda'
 
-cask "launchcontrol"
-cask "anaconda"
+cask 'r-app'
+cask 'rstudio'
 
-cask "r-app"
-cask "rstudio"
-
-cask "google-chrome"
-cask "dropbox"
-cask "iterm2"
-cask "vlc"
-cask "iina"
-cask "alfred"
-cask "arq"
-cask "dash"
-cask "crashplan"
-cask "hammerspoon"
-cask "kindle"
-cask "plex-media-server"
-cask "plex-media-player"
-cask "handbrake"
-cask "viber"
-cask "skype"
-cask "whatsapp"
-cask "slack"
-cask "virtualbox"
-cask "torbrowser"
-cask "fritzing"
-cask "evernote"
-cask "minecraft"
-# cask "sonos"
-cask "telegram"
-cask "caskroom/versions/docker-edge"
-cask "vagrant"
-cask "synergy"
-cask "mailplane"
-cask "1password"
-cask "balsamiq-mockups"
-cask "bartender"
+cask 'google-chrome'
+cask 'dropbox'
+cask 'iterm2'
+cask 'vlc'
+cask 'iina'
+cask 'alfred'
+cask 'arq'
+cask 'dash'
+cask 'crashplan'
+cask 'hammerspoon'
+cask 'kindle'
+cask 'plex-media-server'
+cask 'plex-media-player'
+cask 'handbrake'
+cask 'viber'
+cask 'skype'
+cask 'whatsapp'
+cask 'slack'
+cask 'virtualbox'
+cask 'torbrowser'
+cask 'fritzing'
+cask 'evernote'
+cask 'minecraft'
+# cask 'sonos'
+cask 'telegram'
+cask 'caskroom/versions/docker-edge'
+cask 'vagrant'
+cask 'synergy'
+cask 'mailplane'
+cask '1password'
+cask 'balsamiq-mockups'
+cask 'bartender'
 
 # virtual networks
-cask "zerotier-one"
+cask 'zerotier-one'
 
 # ENV variables pref pane
-cask "rcenvironment"
+cask 'rcenvironment'
 
 # file automation
-cask "hazel"
+cask 'hazel'
 
 # flash xards
-cask "anki"
+cask 'anki'
 
 # screen to gif recorder
-cask "kap"
+cask 'kap'
 
 # HTTP request tool
-cask "postman"
+cask 'postman'
 
 # ping grphing utility
-cask "pingplotter"
+cask 'pingplotter'
 
-cask "caskroom/versions/java8"
+cask 'caskroom/versions/java8'
 
-
-
-
+cask 'github'
 
 
 # FOR XING
-brew "ossp-uuid" # for XING
-brew "mysql" # for XING
-brew "zmq"
-brew "scala"
-brew "sbt"
-cask "hipchat"
-cask "sequel-pro"
-cask "tunnelblick"
+brew 'ossp-uuid' # for XING
+brew 'mysql' # for XING
+brew 'zmq'
+brew 'scala'
+brew 'sbt'
+cask 'hipchat'
+cask 'sequel-pro'
+cask 'tunnelblick'
+
+# IRC client
+cask 'colloquy'
+
+# FOR KLARNA
+
+brew 'pyenv-virtualenv'
+brew "riemann"
+brew "riemann-client"
 
 # vim: ft=ruby
