@@ -1,5 +1,3 @@
-tap 'homebrew/fuse'
-tap 'homebrew/science'
 tap 'caskroom/cask'
 tap 'caskroom/versions'
 tap 'caskroom/drivers'
@@ -7,31 +5,11 @@ tap 'universal-ctags/universal-ctags'
 
 cask_args appdir: '/Applications'
 
+# Basic tools
+
 brew 'ack'
 brew 'aria2'
-brew 'arp-scan'
-brew 'libnet'
-brew 'arping'
-brew 'chruby'
-brew 'universal-ctags', args: ['HEAD']
-brew 'direnv'
-brew 'editorconfig'
-brew 'erlang'
-brew 'elixir'
-brew 'elm'
-brew 'git'
-brew 'elm-format'
-brew 'fzf'
 brew 'gnupg2'
-brew 'go'
-brew 'graphviz'
-brew 'htop-osx'
-brew 'iftop'
-brew 'imagemagick'
-brew 'kubernetes-cli'
-brew 'leiningen'
-brew 'lua'
-brew 'mas'
 brew 'md5deep'
 brew 'minicom'
 brew 'mtr'
@@ -39,38 +17,78 @@ brew 'ncurses'
 brew 'p7zip'
 brew 'pstree'
 brew 'pv'
-brew 'reattach-to-user-namespace'
 brew 'rlwrap'
-brew 'ruby-install'
-brew 's3cmd'
-brew 'tcpflow'
-brew 'terraform'
-brew 'the_silver_searcher'
-brew 'tig'
-brew 'tmate'
-brew 'tmux'
 brew 'tree'
 brew 'watch'
 brew 'wget'
-brew 'yarn'
+brew 'unrar'
+brew 'htop-osx'
 brew 'zsh'
 brew 'zsh-completions'
-brew 'unison'
 brew 'dos2unix'
-brew 'heroku'
+brew 'fzf'
+brew 'mutt'
+brew 'ispell' # for emacs spelling support
+
+# Network tools
+
+brew 'arp-scan'
+brew 'iftop'
+brew 'arping'
+brew 'tcpflow'
+
+# Languagges
+
+brew 'erlang'
+brew 'elixir'
+brew 'elm'
+brew 'elm-format'
+brew 'go'
+brew 'leiningen'
+brew 'lua'
+brew 'chruby'
+brew 'ruby-install'
+brew 'yarn'
+brew 'rust'
+brew 'bashdb'
+brew 'scala'
+brew 'sbt' # scala build tools
+
+# tools
+
+brew 'direnv'
+brew 'editorconfig'
+brew 'emacs'
 brew 'neovim'
+brew 'tmate'
+brew 'tmux'
+brew 'the_silver_searcher'
+brew 'terminal-notifier'
+brew 'reattach-to-user-namespace'
+
+# Admin trools
+
+brew 'kubernetes-cli'
+brew 's3cmd'
+brew 'terraform'
 brew 'awscli'
 brew 'dehydrated'
 brew 'certbot'
-brew 'unrar'
+brew 'mas'
+brew 'unison' #  File synchronization tool for OSX
+cask 'launchcontrol'
+
+# Dev tools
+
+brew 'git'
+brew 'tig'
+brew 'heroku'
 brew 'postgresql'
+brew 'universal-ctags', args: ['HEAD']
+brew 'graphviz'
+brew 'imagemagick'
 brew 'grc' # colorise stdout with patterns
-brew 'ispell' # for emacs spelling support
-brew 'emacs'
-brew 'mutt'
-brew 'terminal-notifier'
-brew 'rust'
-brew "bashdb"
+brew 'zmq'
 
 # taskwarrior setup
 brew 'task', args: ['HEAD']
@@ -78,83 +96,73 @@ brew 'timewarrior'
 brew 'tasksh'
 brew 'vit'
 
-cask 'launchcontrol'
-cask 'anaconda'
 
+# Data tools
+
+cask 'anaconda'
 cask 'r-app'
 cask 'rstudio'
 
-cask 'google-chrome'
-cask 'dropbox'
-cask 'iterm2'
+# Everuyday Apps
+
+# XXX cask 'google-chrome'
 cask 'vlc'
-cask 'iina'
 cask 'alfred'
-cask 'arq'
-cask 'dash'
-cask 'crashplan'
+cask 'mailplane'
+cask '1password6'
+cask 'bartender'
+cask 'dropbox'
+cask 'iina' # media player
+
+
+# Dev Apps
+
 cask 'hammerspoon'
-cask 'kindle'
-cask 'plex-media-server'
-cask 'plex-media-player'
-cask 'handbrake'
-cask 'viber'
-cask 'skype'
-cask 'whatsapp'
+cask 'iterm2'
+cask 'dash'
 cask 'slack'
 cask 'virtualbox'
-cask 'torbrowser'
-cask 'fritzing'
-cask 'evernote'
-cask 'minecraft'
-# cask 'sonos'
-cask 'telegram'
 cask 'caskroom/versions/docker-edge'
 cask 'vagrant'
-cask 'synergy'
-cask 'mailplane'
-cask '1password'
+cask 'synergy' # share keyboard/mouse b/w computers
 cask 'balsamiq-mockups'
-cask 'bartender'
-
-# virtual networks
-cask 'zerotier-one'
-
-# ENV variables pref pane
-cask 'rcenvironment'
-
-# file automation
-cask 'hazel'
-
-# flash xards
-cask 'anki'
-
-# screen to gif recorder
-cask 'kap'
-
-# HTTP request tool
-cask 'postman'
-
-# ping grphing utility
-cask 'pingplotter'
-
+cask 'zerotier-one' # virtual networks
+cask 'rcenvironment' # ENV variables pref pane
+cask 'hazel' # file automation
+cask 'kap' # screen to gif recorder
+cask 'postman' # HTTP request tool
+cask 'pingplotter' # ping grphing utility
 cask 'caskroom/versions/java8'
-
 cask 'github'
+# XXX cask 'tunnelblick' # VPN
+cask 'colloquy' # IRC client
+cask 'sequel-pro'
+
+# Personal Apps
+
+# cask 'arq'
+# cask 'crashplan'
+# cask 'kindle'
+# cask 'plex-media-server'
+# cask 'plex-media-player'
+# cask 'handbrake'
+# cask 'viber'
+# cask 'skype'
+# cask 'whatsapp'
+# cask 'torbrowser'
+# cask 'fritzing'
+# cask 'evernote'
+# cask 'minecraft'
+# cask 'sonos'
+# cask 'telegram'
+
+# cask 'anki' # flash xards
 
 
 # FOR XING
 brew 'ossp-uuid' # for XING
 brew 'mysql' # for XING
-brew 'zmq'
-brew 'scala'
-brew 'sbt'
-cask 'hipchat'
-cask 'sequel-pro'
-cask 'tunnelblick'
 
-# IRC client
-cask 'colloquy'
 
 # FOR KLARNA
 
