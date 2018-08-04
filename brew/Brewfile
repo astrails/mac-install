@@ -90,6 +90,7 @@ brew 'graphviz'
 brew 'imagemagick'
 brew 'grc' # colorise stdout with patterns
 brew 'zmq'
+brew "jq" # command-line JSON processor
 
 # taskwarrior setup
 brew 'task', args: ['HEAD']
@@ -109,7 +110,7 @@ cask 'rstudio'
 cask 'vlc'
 cask 'alfred'
 cask 'mailplane'
-cask '1password6'
+#cask '1password6'
 cask 'bartender'
 cask 'dropbox'
 cask 'iina' # media player
