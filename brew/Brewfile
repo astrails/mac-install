@@ -122,7 +122,7 @@ cask 'iterm2'
 cask 'dash'
 cask 'slack'
 cask 'virtualbox'
-cask 'caskroom/versions/docker-edge'
+cask 'docker-edge'
 cask 'vagrant'
 cask 'synergy' # share keyboard/mouse b/w computers
 cask 'balsamiq-mockups'
@@ -132,7 +132,7 @@ cask 'hazel' # file automation
 cask 'kap' # screen to gif recorder
 cask 'postman' # HTTP request tool
 cask 'pingplotter' # ping grphing utility
-cask 'caskroom/versions/java8'
+cask 'java8'
 cask 'github'
 # XXX cask 'tunnelblick' # VPN
 cask 'colloquy' # IRC client
