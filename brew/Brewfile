@@ -77,6 +77,7 @@ brew 'certbot'
 brew 'mas'
 brew 'unison' #  File synchronization tool for OSX
 cask 'launchcontrol'
+cask "kitematic"
 
 # Dev tools
 
@@ -95,7 +96,6 @@ brew 'task', args: ['HEAD']
 brew 'timewarrior'
 brew 'tasksh'
 brew 'vit'
-
 
 # Data tools
 
@@ -137,6 +137,8 @@ cask 'github'
 # XXX cask 'tunnelblick' # VPN
 cask 'colloquy' # IRC client
 cask 'sequel-pro'
+cask 'gpg-suite'
+
 
 # Personal Apps
 
@@ -170,4 +172,5 @@ brew 'pyenv-virtualenv'
 brew "riemann"
 brew "riemann-client"
 
+brew "ditaa"  # ascii diagrams processor
 # vim: ft=ruby
