@@ -1,4 +1,5 @@
 tap 'caskroom/cask'
+tap 'homebrew/cask-fonts'
 tap 'caskroom/versions'
 tap 'caskroom/drivers'
 tap 'universal-ctags/universal-ctags'
@@ -64,7 +65,8 @@ brew 'emacs'
 brew 'neovim'
 brew 'tmate'
 brew 'tmux'
-brew 'the_silver_searcher'
+brew 'the_silver_searcher' # ag
+brew 'rg' # ag replacement
 brew 'terminal-notifier'
 brew 'reattach-to-user-namespace'
 
@@ -79,7 +81,7 @@ brew 'certbot'
 brew 'mas'
 brew 'unison' #  File synchronization tool for OSX
 cask 'launchcontrol'
-cask "kitematic"
+cask 'kitematic'
 
 # Dev tools
 
@@ -92,7 +94,7 @@ brew 'graphviz'
 brew 'imagemagick'
 brew 'grc' # colorise stdout with patterns
 brew 'zmq'
-brew "jq" # command-line JSON processor
+brew 'jq' # command-line JSON processor
 brew "mosh" # mobile shell
 
 # taskwarrior setup
@@ -173,8 +175,15 @@ brew 'mysql' # for XING
 # FOR KLARNA
 
 brew 'pyenv-virtualenv'
-brew "riemann"
-brew "riemann-client"
+brew 'riemann'
+brew 'riemann-client'
 
-brew "ditaa"  # ascii diagrams processor
+brew 'ditaa' # ascii diagrams processor
+
+# FONTS
+cask 'font-consolas-for-powerline'
+cask 'font-inconsolata-for-powerline'
+cask 'font-menlo-for-powerline'
+cask 'font-noto-mono-for-powerline'
+
 # vim: ft=ruby
