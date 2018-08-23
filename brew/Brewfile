@@ -53,6 +53,8 @@ brew 'rust'
 brew 'bashdb'
 brew 'scala'
 brew 'sbt' # scala build tools
+brew 'python2'
+brew 'python3'
 
 # tools
 
@@ -91,6 +93,7 @@ brew 'imagemagick'
 brew 'grc' # colorise stdout with patterns
 brew 'zmq'
 brew "jq" # command-line JSON processor
+brew "mosh" # mobile shell
 
 # taskwarrior setup
 brew 'task', args: ['HEAD']
