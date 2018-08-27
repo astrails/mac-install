@@ -6,6 +6,7 @@ help:
 	@echo make zsh
 	@echo make vim
 	@echo make ruby
+	@echo make node
 	@echo make invoker
 	@echo
 	@echo OR
@@ -57,6 +58,10 @@ ruby:
 	for ruby in ${RUBIES}; do ruby-install --no-reinstall $$ruby; chruby-exec $$ruby -- gem install bundler; done
 	echo ${DEFAULT_RUBY} > ~/.ruby-version
 .PHONY: ruby
+
+node:
+	${MAKE} -C node
+.PHONY: node
 
 install-invoker:
 	${REXEC} gem install invoker
