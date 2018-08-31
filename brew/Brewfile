@@ -30,6 +30,7 @@ brew 'dos2unix'
 brew 'fzf'
 brew 'mutt'
 brew 'ispell' # for emacs spelling support
+brew 'bat'
 
 # Network tools
 
