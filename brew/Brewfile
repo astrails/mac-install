@@ -37,6 +37,7 @@ brew 'arp-scan'
 brew 'iftop'
 brew 'arping'
 brew 'tcpflow'
+brew 'pssh'
 
 # Languagges
 
