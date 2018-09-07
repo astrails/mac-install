@@ -85,6 +85,7 @@ brew 'unison' #  File synchronization tool for OSX
 brew 'kops'
 cask 'launchcontrol'
 cask 'kitematic'
+cask 'secure-pipes'
 
 # Dev tools
 
