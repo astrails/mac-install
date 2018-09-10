@@ -102,6 +102,7 @@ brew 'zmq'
 brew 'jq' # command-line JSON processor
 brew "mosh" # mobile shell
 brew "artifactory" # jfrog
+brew "jfrog-cli-go"
 
 # taskwarrior setup
 brew 'task', args: ['HEAD']
