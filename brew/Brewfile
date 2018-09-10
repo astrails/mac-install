@@ -78,6 +78,7 @@ brew 'kubernetes-cli'
 brew 's3cmd'
 brew 'terraform'
 brew 'awscli'
+brew 'aws-shell'
 brew 'dehydrated'
 brew 'certbot'
 brew 'mas'
@@ -100,6 +101,7 @@ brew 'grc' # colorise stdout with patterns
 brew 'zmq'
 brew 'jq' # command-line JSON processor
 brew "mosh" # mobile shell
+brew "artifactory" # jfrog
 
 # taskwarrior setup
 brew 'task', args: ['HEAD']
